@@ -51,12 +51,11 @@ const NSString *kMainMenuPauseFrame = @"mainMenuPauseFrame";
 const NSString *kMainMenuResumeFrame = @"mainMenuResumeFrame";
 
 
-BOOL checkAllCollisions(SKNode *node, CGVector vector){
+BOOL checkAllCollisions(SKNode *node){
     if([node.scene isKindOfClass:[GameScene class]]){
         GameScene *scene = (GameScene*)node.scene;
         for(SKNode *rectangle in scene.rectangles){
-            BOOL isColliding = checkCollision(node,vector,
-                                              rectangle,rectangle.physicsBody.velocity);
+            BOOL isColliding = checkCollision(node,rectangle);
             if(isColliding){
                 return true;
             }
@@ -65,7 +64,7 @@ BOOL checkAllCollisions(SKNode *node, CGVector vector){
     return false;
 }
 
-BOOL checkCollision(SKNode *a, CGVector vectorA, SKNode *b, CGVector vectorB){
+BOOL checkCollision(SKNode *a, SKNode *b){
     CGFloat aTopLeftX = a.position.x;
     CGFloat aTopLeftY = a.position.y+a.frame.size.height/2;
     CGFloat aBottomRightX = a.position.x;
@@ -77,6 +76,8 @@ BOOL checkCollision(SKNode *a, CGVector vectorA, SKNode *b, CGVector vectorB){
     return !(bTopLeftX>=aBottomRightX || aTopLeftX>=bBottomRightX ||
              aBottomRightY>=bTopLeftY || bBottomRightY>=aTopLeftY);
 }
+
+// doesn't work....
 
 /*BOOL checkCollision(SKNode *a, CGVector vectorA, SKNode *b, CGVector vectorB){
     CGFloat aTopLeftX = (a.position.x+vectorA.dx/FRAME_RATE)-a.frame.size.width*.15;

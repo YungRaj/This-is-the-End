@@ -63,8 +63,8 @@ extern NSString *kGameNotificationSave;
 extern NSString *kMainMenuPauseFrame;
 extern NSString *kMainMenuResumeFrame;
 
-BOOL checkAllCollisions(SKNode *node, CGVector vector);
-BOOL checkCollision(SKNode *a, CGVector vectorA, SKNode *b, CGVector vectorB);
+BOOL checkAllCollisions(SKNode *node);
+BOOL checkCollision(SKNode *a, SKNode *b);
 SKSpriteNode<CollectableItem>* randomItem();
 PowerUp* randomPowerUp();
 Badge* randomBadge();

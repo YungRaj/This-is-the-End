@@ -126,8 +126,8 @@ static NSString* const achievementsKey = @"achievements";
             self.position = CGPointMake(self.position.x+self.size.width*.35,
                                         self.position.y);
         }else{
-            CGVector velocity = CGVectorMake(self.size.width*(12*FRAME_RATE/667),playerVelocityY);
-            if(checkAllCollisions(self,velocity)){
+            CGVector velocity = CGVectorMake(self.size.width*(14*FRAME_RATE/667),playerVelocityY);
+            if(checkAllCollisions(self)){
                 self.physicsBody.velocity = CGVectorMake(0,playerVelocityY);
             }else{
                 self.physicsBody.velocity = velocity;
@@ -139,8 +139,8 @@ static NSString* const achievementsKey = @"achievements";
             self.position = CGPointMake(self.position.x+(xScaleNegativeDirectionFromIOSVersion()*self.size.width*.35)
                                         ,self.position.y);
         }else{
-            CGVector velocity = CGVectorMake(self.size.width*(12*FRAME_RATE/667),playerVelocityY);
-            if(checkAllCollisions(self,velocity)){
+            CGVector velocity = CGVectorMake(self.size.width*(14*FRAME_RATE/667),playerVelocityY);
+            if(checkAllCollisions(self)){
                 self.physicsBody.velocity = CGVectorMake(0,playerVelocityY);
             }else{
                 self.physicsBody.velocity = velocity;

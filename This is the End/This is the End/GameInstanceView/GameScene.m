@@ -277,7 +277,7 @@
                                   size.height/4);
     
     self.player.position = [self.level
-                            convertPoint:CGPointMake(self.player.size.width*.175,0)
+                            convertPoint:CGPointMake(self.player.size.width*.175,.05)
                                 fromNode:self];
     
     [self.level addChild:self.player];

@@ -105,7 +105,7 @@ static NSString* const achievementsKey = @"achievements";
     
     CGFloat playerVelocityY = self.physicsBody.velocity.dy;
     CGFloat playerVelocityX = self.physicsBody.velocity.dx;
-    if(!playerVelocityY){
+    if(!((NSInteger)playerVelocityY)){
         self.isStanding = YES;
         if(self.currentState==PlayerStateIdle){
             self.currentState = PlayerStateStanding;

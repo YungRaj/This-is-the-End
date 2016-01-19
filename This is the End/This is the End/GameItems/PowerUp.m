@@ -56,6 +56,7 @@ NSString *kPowerUpActionAnimation = @"powerUpAnimation";
     } else {
         [state addPowerUp:self];
     }
+    [self removeAllActions];
     [self removeFromParent];
 }
 

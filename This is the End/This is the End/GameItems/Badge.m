@@ -42,9 +42,8 @@
     GameScene *scene = (GameScene*)self.scene;
     GameData *state = scene.state;
     [state addBadge:self];
+    [self removeAllActions];
     [self removeFromParent];
-    
-    
 }
 
 

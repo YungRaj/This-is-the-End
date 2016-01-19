@@ -352,6 +352,7 @@
 }
 
 -(void)update:(NSTimeInterval)currentTime{
+    printf("%ld\n",[self.state numItems]);
     UIApplicationState applicationState = [[UIApplication sharedApplication] applicationState];
     if(applicationState == UIApplicationStateBackground
        || applicationState == UIApplicationStateInactive){

@@ -32,7 +32,10 @@
 -(void)addBadge:(Badge*)badge;
 -(void)removePowerUp:(PowerUp *)powerUp;
 -(void)removeBadge:(Badge*)badge;
--(int)numBadgesFromType:(BadgeType)badgeType;
--(int)numPowerUpsFromType:(PowerUpType)powerUpType;
+-(unsigned long)numItems;
+-(unsigned long)numBadges;
+-(unsigned long)numPowerUps;
+-(unsigned long)numBadgesFromType:(BadgeType)badgeType;
+-(unsigned long)numPowerUpsFromType:(PowerUpType)powerUpType;
 
 @end

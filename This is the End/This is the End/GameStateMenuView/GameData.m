@@ -31,6 +31,20 @@ static NSString* const shotsFiredKey = @"shotsFired";
 static NSString *const powerUpsKey = @"powerUps";
 static NSString* const badgesKey = @"badges";
 
+-(NSMutableArray*)powerUps{
+    if(!_powerUps){
+        _powerUps = [[NSMutableArray alloc] init];
+    }
+    return _powerUps;
+}
+
+-(NSMutableArray*)badges{
+    if(!_badges){
+        _badges = [[NSMutableArray alloc] init];
+    }
+    return _badges;
+}
+
 -(instancetype)initWithCoder:(NSCoder*)decoder
 {
     self = [super init];
@@ -42,7 +56,7 @@ static NSString* const badgesKey = @"badges";
         _coins = [decoder decodeInt32ForKey:coinsKey];
         _kills = [decoder decodeInt32ForKey:killsKey];
         _shotsFired = [decoder decodeInt32ForKey:shotsFiredKey];
-        _badges = [decoder decodeObjectForKey:powerUpsKey];
+        _powerUps = [decoder decodeObjectForKey:powerUpsKey];
         _badges = [decoder decodeObjectForKey:badgesKey];
     }
     return self;
@@ -113,10 +127,10 @@ static NSString* const badgesKey = @"badges";
 
 
 -(void)addPowerUp:(PowerUp*)powerUp{
-    [self.badges addObject:powerUp];
+    [self.powerUps addObject:powerUp];
 }
 
--(void)addBadge:(Badge *)badge{
+-(void)addBadge:(Badge*)badge{
     [self.badges addObject:badge];
 }
 
@@ -130,8 +144,20 @@ static NSString* const badgesKey = @"badges";
     [badge removeFromParent];
 }
 
--(int)numBadgesFromType:(BadgeType)badgeType{
-    int foundBadges = 0;
+-(unsigned long)numItems{
+    return ([self.powerUps count] + [self.badges count]);
+}
+
+-(unsigned long)numBadges{
+    return [self.badges count];
+}
+
+-(unsigned long)numPowerUps{
+    return [self.powerUps count];
+}
+
+-(unsigned long)numBadgesFromType:(BadgeType)badgeType{
+    unsigned long foundBadges = 0;
     for(Badge *badge in self.badges){
         if(badge.type==badgeType){
             foundBadges++;
@@ -140,8 +166,8 @@ static NSString* const badgesKey = @"badges";
     return foundBadges;
 }
 
--(int)numPowerUpsFromType:(PowerUpType)powerUpType{
-    int foundPowerUps = 0;
+-(unsigned long)numPowerUpsFromType:(PowerUpType)powerUpType{
+    unsigned long foundPowerUps = 0;
     for(PowerUp *powerUp in self.powerUps){
         if(powerUp.type==powerUpType){
             foundPowerUps++;
@@ -161,6 +187,7 @@ static NSString* const badgesKey = @"badges";
     self.kills = 0;
     self.shotsFired = 0;
     self.badges = [[NSMutableArray alloc] init];
+    self.powerUps = [[NSMutableArray alloc] init];
 }
 
 

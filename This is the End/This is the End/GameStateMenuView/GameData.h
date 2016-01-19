@@ -7,10 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
-
-@class PowerUp;
-@class Badge;
+#import "Badge.h"
+#import "PowerUp.h"
 
 @interface GameData : NSObject <NSCoding>
 
@@ -34,5 +32,7 @@
 -(void)addBadge:(Badge*)badge;
 -(void)removePowerUp:(PowerUp *)powerUp;
 -(void)removeBadge:(Badge*)badge;
+-(int)numBadgesFromType:(BadgeType)badgeType;
+-(int)numPowerUpsFromType:(PowerUpType)powerUpType;
 
 @end

@@ -105,7 +105,9 @@ static NSString* const achievementsKey = @"achievements";
     
     CGFloat playerVelocityY = self.physicsBody.velocity.dy;
     CGFloat playerVelocityX = self.physicsBody.velocity.dx;
-    if(!((NSInteger)playerVelocityY)){
+
+    if(!(fabs(playerVelocityY)>0.000005)){
+        // due to floating point precision this type of check is necessary 
         self.isStanding = YES;
         if(self.currentState==PlayerStateIdle){
             self.currentState = PlayerStateStanding;
@@ -119,6 +121,7 @@ static NSString* const achievementsKey = @"achievements";
     BOOL isRightSelected = scene.right.isSelected;
     BOOL isLeftSelected = scene.left.isSelected;
     CGFloat currentXScale = scene.player.xScale;
+   
     
     if(isRightSelected && !isLeftSelected){
         if(currentXScale!=1.0){
@@ -192,7 +195,7 @@ static NSString* const achievementsKey = @"achievements";
             }else if(wantsToMove && !fire){
                 [self move];
                 self.currentState = PlayerStateWalking;
-            }else if(jump){
+            }else if(jump && isPlayerStanding && !fire){
                 [self jump];
                 self.currentState = PlayerStateJumping;
             }
@@ -231,6 +234,13 @@ static NSString* const achievementsKey = @"achievements";
             }
             break;
         case PlayerStateJumping:
+            if(wantsToMove && fire){
+                [self moveAndAttack];
+                self.currentState = PlayerStateFireAndWalking;
+            }else if(!wantsToMove && fire){
+                [self attack];
+                self.currentState = PlayerStateFire;
+            }
             break;
             
     }

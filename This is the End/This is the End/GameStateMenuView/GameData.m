@@ -128,6 +128,26 @@ static NSString* const badgesKey = @"badges";
     [self.badges removeObject:badge];
 }
 
+-(int)numBadgesFromType:(BadgeType)badgeType{
+    int foundBadges = 0;
+    for(Badge *badge in self.badges){
+        if(badge.type==badgeType){
+            foundBadges++;
+        }
+    }
+    return foundBadges;
+}
+
+-(int)numPowerUpsFromType:(PowerUpType)powerUpType{
+    int foundPowerUps = 0;
+    for(PowerUp *powerUp in self.powerUps){
+        if(powerUp.type==powerUpType){
+            foundPowerUps++;
+        }
+    }
+    return foundPowerUps;
+}
+
 
 -(void)reset{
     self.worlds = 1;

@@ -40,8 +40,7 @@ static NSString *powerUps[] = {@"Coin",
                                @"Attack",
                                @"Defense",
                                @"Jump",
-                               @"Run",
-                               @"Portal"};
+                               @"Run"};
 
 @interface PowerUp : SKSpriteNode <CollectableItem>
 

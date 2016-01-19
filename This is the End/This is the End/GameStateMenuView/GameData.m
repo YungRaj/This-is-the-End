@@ -122,10 +122,12 @@ static NSString* const badgesKey = @"badges";
 
 -(void)removePowerUp:(PowerUp*)powerUp{
     [self.powerUps removeObject:powerUp];
+    [powerUp removeFromParent];
 }
 
 -(void)removeBadge:(Badge*)badge{
     [self.badges removeObject:badge];
+    [badge removeFromParent];
 }
 
 -(int)numBadgesFromType:(BadgeType)badgeType{

@@ -104,7 +104,7 @@ static NSString* const achievementsKey = @"achievements";
     }
     
     CGFloat playerVelocityY = self.physicsBody.velocity.dy;
-    CGFloat playerVelocityX = self.physicsBody.velocity.dx;
+    // CGFloat playerVelocityX = self.physicsBody.velocity.dx;
 
     if(!(fabs(playerVelocityY)>0.000005)){
         // due to floating point precision this type of check is necessary 
@@ -129,7 +129,7 @@ static NSString* const achievementsKey = @"achievements";
             self.position = CGPointMake(self.position.x+self.size.width*.35,
                                         self.position.y);
         }else{
-            CGVector velocity = CGVectorMake(self.size.width*(14*FRAME_RATE/667),playerVelocityY);
+            CGVector velocity = CGVectorMake(self.size.width*(18*FRAME_RATE/667),playerVelocityY);
             if(checkAllCollisions(self)){
                 self.physicsBody.velocity = CGVectorMake(0,playerVelocityY);
             }else{
@@ -142,7 +142,9 @@ static NSString* const achievementsKey = @"achievements";
             self.position = CGPointMake(self.position.x+(xScaleNegativeDirectionFromIOSVersion()*self.size.width*.35)
                                         ,self.position.y);
         }else{
-            CGVector velocity = CGVectorMake(self.size.width*(14*FRAME_RATE/667),playerVelocityY);
+            CGVector velocity =
+                CGVectorMake(self.size.width*(18*FRAME_RATE/667)*xScaleNegativeDirectionFromIOSVersion(),
+                             playerVelocityY);
             if(checkAllCollisions(self)){
                 self.physicsBody.velocity = CGVectorMake(0,playerVelocityY);
             }else{

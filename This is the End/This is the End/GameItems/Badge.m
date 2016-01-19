@@ -8,13 +8,13 @@
 
 #import "Badge.h"
 #import "GameScene.h"
+#import "GameData.h"
 #import "Player.h"
 
 @interface Badge () {
 
 }
 
-@property (strong,nonatomic) NSArray *images;
 
 @end
 
@@ -25,6 +25,8 @@
     
     if(self){
         _type = type;
+        NSString *badgeName = badges[type];
+        self.texture = [SKTexture textureWithImageNamed:badgeName];
     }
     
     return self;
@@ -35,25 +37,13 @@
     return badges[type];
 }
 
--(void)setImages{
-    BadgeType type = self.type;
-    NSString *badgeName = badges[type];
-    NSMutableArray *textures = [NSMutableArray array];
-    for(int i=1; i<=4; i++){
-        NSString *imageName = [NSString stringWithFormat:@"%@%d",badgeName,i];
-        [textures addObject:[SKTexture textureWithImageNamed:imageName]];
-    }
-    self.images = textures;
-}
 
 -(void)activate{
     GameScene *scene = (GameScene*)self.scene;
     GameData *state = scene.state;
-    Player *player = scene.player;
+    [state addBadge:self];
+    [self removeFromParent];
     
-}
-
--(void)deactivate{
     
 }
 

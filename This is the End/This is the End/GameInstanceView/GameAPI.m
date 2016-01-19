@@ -102,7 +102,7 @@ NSInteger xScaleNegativeDirectionFromIOSVersion(){
 
 SKSpriteNode<CollectableItem>* randomItem(){
     NSInteger random = arc4random()%((numberOfBadges+numberOfPowerUps)*2);
-    if(random==23){
+    if(random==10){
         return randomBadge();
     }else{
         return randomPowerUp();

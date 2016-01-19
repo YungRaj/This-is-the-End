@@ -26,7 +26,7 @@ typedef enum{
 @property (assign,nonatomic) EnemyType enemyType;
 @property (assign,nonatomic) EnemyState state;
 @property (assign,nonatomic) int32_t health;
-@property (assign,nonatomic) int32_t attack;
+@property (assign,nonatomic) int32_t attackPower;
 @property (assign,nonatomic) BOOL canMove;
 @property (assign,nonatomic) BOOL canAttack;
 @property (assign,nonatomic) BOOL canJump;

@@ -404,14 +404,14 @@
         item = contact.bodyB.node;
     }
     if(player && platform){
-        CGPoint playerPosition = CGPointMake(player.position.x-(player.frame.size.width*.175*player.xScale),
+        /*CGPoint playerPosition = CGPointMake(player.position.x-(player.frame.size.width*.175*player.xScale),
                                              player.frame.origin.y);
         CGFloat centerOfPlayer = playerPosition.x;
         CGFloat bottomOfPlayer = playerPosition.y;
         
         CGPoint platformPosition = platform.position;
         CGFloat leftOfPlatform = platformPosition.x-platform.frame.size.width/2;
-        CGFloat rightOfPlatform = platformPosition.x+platform.frame.size.width/2;
+        CGFloat rightOfPlatform = platformPosition.x+platform.frame.size.width/2;*/
         //printf("%f %f %f n\n\n\n",bottomOfPlayer,centerOfPlayer,leftOfPlatform);
         
     }else if(player && level){
@@ -468,8 +468,10 @@
     }else if(player && item){
         if([item isKindOfClass:[PowerUp class]]){
             PowerUp *powerUp = (PowerUp*)item;
+            [powerUp activate];
         }else if([item isKindOfClass:[Badge class]]){
             Badge *badge = (Badge*)item;
+            [badge activate];
         }
     }
 }

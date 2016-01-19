@@ -21,22 +21,21 @@
 #import "MovingObject.h"
 #import "CollectableItem.h"
 
-#define numberOfPowerUps 8
+#define numberOfPowerUps 6
+
+extern NSString *kPowerUpActionAnimation;
 
 typedef enum{
     Coin,
-    God,
     Health,
     Attack,
     Defense,
     Jump,
     Run,
-    Portal,
 } PowerUpType;
 
 static NSString *powerUps[] = {@"Coin",
-                               @"God",
-                               @"Health"
+                               @"Health",
                                @"Attack",
                                @"Defense",
                                @"Jump",
@@ -47,8 +46,6 @@ static NSString *powerUps[] = {@"Coin",
 @property (assign,nonatomic) PowerUpType type;
 
 -(instancetype)initWithType:(PowerUpType)type;
--(void)spawnNewItemAtPoint:(CGPoint)point;
 -(void)activate;
--(void)deactivate;
 
 @end

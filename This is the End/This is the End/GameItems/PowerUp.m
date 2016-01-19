@@ -11,11 +11,12 @@
 #import "Player.h"
 #import "GameData.h"
 
+NSString *kPowerUpActionAnimation = @"powerUpAnimation";
+
 @interface PowerUp () {
     
 }
 
-@property (strong,nonatomic) NSArray *images;
 
 @end
 
@@ -39,28 +40,25 @@
         NSString *imageName = [NSString stringWithFormat:@"%@%d",powerUpName,i];
         [textures addObject:[SKTexture textureWithImageNamed:imageName]];
     }
-    self.images = textures;
-}
-
--(void)spawnNewItemAtPoint:(CGPoint)point{
-    self.position = point;
+    SKAction *action = [SKAction animateWithTextures:textures timePerFrame:0.2];
+    action = [SKAction repeatActionForever:action];
+    [self runAction:action withKey:kPowerUpActionAnimation];
     
 }
+
+
 
 -(void)activate{
     GameScene *scene = (GameScene*)self.scene;
-    Player *player = scene.player;
     GameData *state = scene.state;
     if(self.type==Coin){
         state.coins = state.coins + 1;
-        return;
+    } else {
+        [state addPowerUp:self];
     }
-    
-    
+    [self removeFromParent];
 }
 
--(void)deactivate{
-    
-}
+
 
 @end

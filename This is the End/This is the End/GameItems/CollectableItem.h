@@ -11,6 +11,5 @@
 @protocol CollectableItem <NSObject>
 
 -(void)activate;
--(void)deactivate;
 
 @end

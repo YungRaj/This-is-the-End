@@ -49,10 +49,8 @@ static NSString *badges[] = {@"Attack",
 @interface Badge : SKSpriteNode <CollectableItem>
 
 @property (assign,nonatomic) BadgeType type;
-@property (strong,nonatomic) NSString *identifier;
 
 -(instancetype)initWithType:(BadgeType)type;
 -(void)activate;
--(void)deactivate;
 
 @end

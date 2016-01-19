@@ -6,8 +6,10 @@
 //  Copyright (c) 2015 Ilhan-Parker. All rights reserved.
 //
 
+#import "GameAPI.h"
 #import "Block.h"
 #import "PowerUp.h"
+#import "GameScene.h"
 #import "Badge.h"
 
 NSString *kBlockActionActivate = @"activate";
@@ -26,11 +28,44 @@ NSString *kBlockActionActivate = @"activate";
             [self runAction:activateBlock withKey:kBlockActionActivate];
             
             CGPoint currentPosition = self.position;
-            CGSize sceneSize = self.scene.size;
-            CGSize powerUpSize = CGSizeMake(sceneSize.width/10,
-                                            sceneSize.height/10);
+            CGSize itemSize = CGSizeMake(self.size.width/1.475,
+                                            self.size.height/1.5);
             CGPoint itemPosition = CGPointMake(currentPosition.x,
-                                               currentPosition.y+self.size.width/2+powerUpSize.height/2);
+                                               currentPosition.y+self.size.width/2+itemSize.height/2);
+            
+            SKSpriteNode<CollectableItem> *item = randomItem();
+            item.position = itemPosition;
+            item.size = itemSize;
+            if([item isKindOfClass:[Badge class]]){
+                Badge *badge = (Badge*)item;
+                NSString *name = badges[badge.type];
+                badge.physicsBody = [SKPhysicsBody
+                                       bodyWithTexture:[SKTexture textureWithImageNamed:name]
+                                       size:badge.size];
+            }else if([item isKindOfClass:[PowerUp class]]){
+                PowerUp *powerUp = (PowerUp*)item;
+                NSString *name = [NSString stringWithFormat:@"%@1",powerUps[powerUp.type]];
+                powerUp.physicsBody = [SKPhysicsBody
+                                         bodyWithTexture:[SKTexture textureWithImageNamed:name]
+                                                    size:powerUp.size];
+            }
+            switch(arc4random()%2){
+                case 0:
+                    item.physicsBody.velocity = CGVectorMake(item.size.width*2, 0);
+                    break;
+                case 1:
+                    item.physicsBody.velocity = CGVectorMake(-item.size.width*2, 0);
+                    break;
+            }
+            item.physicsBody.dynamic = YES;
+            item.physicsBody.categoryBitMask = itemMask;
+            item.physicsBody.contactTestBitMask = 0xFFFFFFFF ^ itemMask;
+            item.physicsBody.allowsRotation = NO;
+            item.physicsBody.friction = 0;
+            
+            [((GameScene*)self.scene).level addChild:item];
+            
+            
         }
         
         

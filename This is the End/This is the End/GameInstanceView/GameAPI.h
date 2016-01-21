@@ -24,6 +24,7 @@ static const uint32_t blockMask = 0x1 << 4;
 static const uint32_t itemMask = 0x1 << 5;
 static const uint32_t bulletMask = 0x1 << 6;
 
+
 extern NSString *kPowerUpGod;
 extern NSString *kPowerUpCoin;
 extern NSString *kPowerUpAttack;

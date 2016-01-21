@@ -8,6 +8,8 @@
 
 #import "StoreViewController.h"
 #import "GameStateMenuVC.h"
+#import "Badge.h"
+#import "PowerUp.h"
 
 NSString *kStoreVCDismissKey = @"storeDismissKey";
 
@@ -16,6 +18,7 @@ NSString *kStoreVCDismissKey = @"storeDismissKey";
 }
 
 
+@property (strong,nonatomic) UIScrollView *storeContents;
 @property (strong,nonatomic) UIButton *backButton;
 @property (strong,nonatomic) UITapGestureRecognizer *tapGesture;
 @property (strong,nonatomic) CALayer *line1;
@@ -58,19 +61,6 @@ NSString *kStoreVCDismissKey = @"storeDismissKey";
     [super didReceiveMemoryWarning];
 }
 
--(void)setUpData{
-    if(!self.backButton){
-        _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    }if(!self.line1){
-        self.line1 = [CALayer layer];
-    }if(!self.line2){
-        self.line2 = [CALayer layer];
-    }if(!self.line3){
-        self.line3 = [CALayer layer];
-    }if(!self.line4){
-        self.line4 = [CALayer layer];
-    }
-}
 
 -(void)setUpView{
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
@@ -130,8 +120,8 @@ NSString *kStoreVCDismissKey = @"storeDismissKey";
     
     frame = CGRectMake(size.width/20,
                        size.height/16,
-                       size.width/8,
-                       size.height/8);
+                       size.width/7,
+                       size.height/7);
     self.backButton.frame = frame;
     [self.backButton setBackgroundImage:button forState:UIControlStateNormal];
     [self.view addSubview:self.backButton];
@@ -145,6 +135,31 @@ NSString *kStoreVCDismissKey = @"storeDismissKey";
     backText.frame = frame;
     backText.contents = back;
     [[self.backButton layer] addSublayer:backText];
+    
+    self.storeContents = [[UIScrollView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/8,
+                                                                        self.view.frame.size.height/4,
+                                                                        self.view.frame.size.width*3/4,
+                                                                        self.view.frame.size.height*2/3)];
+    
+    CGSize storeItemSize = CGSizeMake(self.view.frame.size.width*3/4,
+                                      self.view.frame.size.height/6);
+    self.storeContents.backgroundColor = [UIColor grayColor];
+    [self.storeContents setContentSize:CGSizeMake(storeItemSize.width,
+                                                  storeItemSize.height*(numberOfBadges+numberOfPowerUps))];
+    [self.view addSubview:self.storeContents];
+    self.storeContents.showsVerticalScrollIndicator=YES;
+    self.storeContents.scrollEnabled = YES;
+    self.storeContents.userInteractionEnabled = YES;
+    
+    CGFloat y = 0;
+    for(int i=0; i<(numberOfBadges+numberOfPowerUps); i++){
+        CGRect frame = CGRectMake(0,y,storeItemSize.width,storeItemSize.height);
+        UIView *cell = [[UIView alloc] initWithFrame:frame];
+        cell.layer.borderColor = [UIColor blackColor].CGColor;
+        cell.layer.borderWidth = storeItemSize.height/15;
+        [self.storeContents addSubview:cell];
+        y+=storeItemSize.height;
+    }
 }
 
 
@@ -161,7 +176,7 @@ NSString *kStoreVCDismissKey = @"storeDismissKey";
     if(CGRectContainsPoint(self.backButton.frame,point)){
         CGRect oldFrame = self.view.frame;
         CGRect newFrame = CGRectMake(oldFrame.origin.x,
-                                     oldFrame.origin.y-oldFrame.size.height,
+                                     -oldFrame.size.height,
                                      oldFrame.size.width,
                                      oldFrame.size.height);
         [UIView animateWithDuration:0.8 animations:^{
@@ -169,6 +184,11 @@ NSString *kStoreVCDismissKey = @"storeDismissKey";
         } completion:^(BOOL completion){
             if(completion){
                 [self.view removeFromSuperview];
+                for(UIViewController *controller in [self.parentViewController childViewControllers]){
+                    if([controller isKindOfClass:[GameStateMenuVC class]]){
+                        controller.view.userInteractionEnabled = YES;
+                    }
+                }
                 [self removeFromParentViewController];
             }
         }];

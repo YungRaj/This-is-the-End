@@ -85,6 +85,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    NSLog(@"View has appeared");
 
 }
 
@@ -339,6 +340,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         transition.type = kCATransitionPush;
         transition.subtype = kCATransitionFromBottom;
         [storeVC.view.layer addAnimation:transition forKey:nil];
+        self.view.userInteractionEnabled = NO;
     }
 }
 

@@ -12,6 +12,7 @@
 #import "GameData.h"
 
 NSString *kPowerUpActionAnimation = @"powerUpAnimation";
+NSString *kPowerUpActionDisappear = @"powerUpDisappear";
 
 @interface PowerUp () {
     
@@ -57,7 +58,17 @@ NSString *kPowerUpActionAnimation = @"powerUpAnimation";
         [state addPowerUp:self];
     }
     [self removeAllActions];
-    [self removeFromParent];
+    self.physicsBody = nil;
+    SKTexture *texture1 = [SKTexture textureWithImageNamed:@"sparkle1"];
+    SKTexture *texture2 = [SKTexture textureWithImageNamed:@"sparkle2"];
+    SKTexture *texture3 = [SKTexture textureWithImageNamed:@"sparkle3"];
+    NSArray *textures = @[texture1, texture2, texture3];
+    SKAction *disappear = [SKAction animateWithTextures:textures timePerFrame:0.2];
+    SKAction *block = [SKAction runBlock:^{
+        [self removeFromParent];
+    }];
+    SKAction *action = [SKAction sequence:@[disappear,block]];
+    [self runAction:action withKey:kPowerUpActionDisappear];
 }
 
 

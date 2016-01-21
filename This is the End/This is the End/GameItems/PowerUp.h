@@ -23,7 +23,7 @@
 
 #define numberOfPowerUps 6
 
-extern NSString *kPowerUpActionAnimation;
+
 
 typedef enum{
     Coin,

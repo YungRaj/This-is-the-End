@@ -76,7 +76,13 @@ NSString *kStoreVCDismissKey = @"storeDismissKey";
 
 -(void)setUpPhoneView{
     self.view.backgroundColor = [UIColor colorWithWhite:0.7 alpha:1.0];
+    UIImage *store = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"store" ofType:@"png"]];
     UIImage *button = [UIImage imageNamed:@"button.png"];
+    
+    if(!store){
+        NSLog(@"Panic");
+    }
+    
     id back = (id)[UIImage imageNamed:@"back.png"].CGImage;
     id border = (id)[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"heightborder"
                                                                                      ofType:@"png"]].CGImage;
@@ -117,6 +123,16 @@ NSString *kStoreVCDismissKey = @"storeDismissKey";
     [[self.view layer] addSublayer:self.line4];
     [[self.view layer] addSublayer:self.line1];
     [[self.view layer] addSublayer:self.line3];
+    
+    
+    CALayer *storeText = [CALayer layer];
+    storeText.contents = (id)store.CGImage;
+    frame = CGRectMake(size.width/2.75,
+                       size.height/12,
+                       size.width/4,
+                       size.height/8);
+    storeText.frame = frame;
+    [self.view.layer addSublayer:storeText];
     
     frame = CGRectMake(size.width/20,
                        size.height/16,

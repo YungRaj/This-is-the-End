@@ -126,12 +126,22 @@ NSString *kStoreVCDismissKey = @"storeDismissKey";
     
     
     CALayer *storeText = [CALayer layer];
+    CALayer *blackBackground = [CALayer layer];
     storeText.contents = (id)store.CGImage;
-    frame = CGRectMake(size.width/2.75,
+    frame = CGRectMake(size.width/2.65,
                        size.height/12,
                        size.width/4,
                        size.height/8);
     storeText.frame = frame;
+    frame = CGRectMake(size.width/2.9,
+                       size.height/20,
+                       size.width/3.25,
+                       size.height/5);
+    blackBackground.frame = frame;
+    blackBackground.backgroundColor = [UIColor blackColor].CGColor;
+    blackBackground.borderColor = [UIColor greenColor].CGColor;
+    blackBackground.borderWidth = blackBackground.frame.size.height/15;
+    [self.view.layer addSublayer:blackBackground];
     [self.view.layer addSublayer:storeText];
     
     frame = CGRectMake(size.width/20,
@@ -152,13 +162,14 @@ NSString *kStoreVCDismissKey = @"storeDismissKey";
     backText.contents = back;
     [[self.backButton layer] addSublayer:backText];
     
-    self.storeContents = [[UIScrollView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/8,
-                                                                        self.view.frame.size.height/4,
-                                                                        self.view.frame.size.width*3/4,
-                                                                        self.view.frame.size.height*2/3)];
+    self.storeContents = [[UIScrollView alloc] initWithFrame:
+                            CGRectMake(self.view.frame.size.width/36,
+                                       self.view.frame.size.height/4,
+                                       self.view.frame.size.width*17/18,
+                                       self.view.frame.size.height*7/10)];
     
-    CGSize storeItemSize = CGSizeMake(self.view.frame.size.width*3/4,
-                                      self.view.frame.size.height/6);
+    CGSize storeItemSize = CGSizeMake(self.view.frame.size.width/3.182225,
+                                      self.view.frame.size.height/4);
     self.storeContents.backgroundColor = [UIColor grayColor];
     [self.storeContents setContentSize:CGSizeMake(storeItemSize.width,
                                                   storeItemSize.height*(numberOfBadges+numberOfPowerUps))];
@@ -170,11 +181,25 @@ NSString *kStoreVCDismissKey = @"storeDismissKey";
     CGFloat y = 0;
     for(int i=0; i<(numberOfBadges+numberOfPowerUps); i++){
         CGRect frame = CGRectMake(0,y,storeItemSize.width,storeItemSize.height);
-        UIView *cell = [[UIView alloc] initWithFrame:frame];
-        cell.layer.borderColor = [UIColor blackColor].CGColor;
-        cell.layer.borderWidth = storeItemSize.height/15;
-        [self.storeContents addSubview:cell];
-        y+=storeItemSize.height;
+        if(i==0){
+            frame.size.height = storeItemSize.height/2;
+        }
+        UIView *cellLeft = [[UIView alloc] initWithFrame:frame];
+        cellLeft.layer.borderColor = [UIColor blackColor].CGColor;
+        cellLeft.layer.borderWidth = storeItemSize.height/15;
+        [self.storeContents addSubview:cellLeft];
+        frame.origin.x += storeItemSize.width;
+        UIView *cellMiddle = [[UIView alloc] initWithFrame:frame];
+        cellMiddle.layer.borderColor = cellLeft.layer.borderColor;
+        cellMiddle.layer.borderWidth = cellLeft.layer.borderWidth;
+        [self.storeContents addSubview:cellMiddle];
+        frame.origin.x += storeItemSize.width;
+        UIView *cellRight = [[UIView alloc] initWithFrame:frame];
+        cellRight.layer.borderColor = cellLeft.layer.borderColor;
+        cellRight.layer.borderWidth = cellLeft.layer.borderWidth;
+        [self.storeContents addSubview:cellRight];
+        
+        y+=frame.size.height;
     }
 }
 

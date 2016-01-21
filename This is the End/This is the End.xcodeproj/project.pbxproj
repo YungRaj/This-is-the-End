@@ -93,6 +93,7 @@
 		A580EB1A1BA7B6B500A2E05B /* background4-1.png in Resources */ = {isa = PBXBuildFile; fileRef = A580EB171BA7B6B500A2E05B /* background4-1.png */; };
 		A580EB1B1BA7B6B500A2E05B /* background4-2.png in Resources */ = {isa = PBXBuildFile; fileRef = A580EB181BA7B6B500A2E05B /* background4-2.png */; };
 		A580EB1C1BA7B6B500A2E05B /* background4-3.png in Resources */ = {isa = PBXBuildFile; fileRef = A580EB191BA7B6B500A2E05B /* background4-3.png */; };
+		A582C7FA1C4FC96C004A4518 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A582C7F91C4FC96C004A4518 /* StoreViewController.m */; };
 		A587FD031B895B5D00086EAD /* taserBot_idle_fire.png in Resources */ = {isa = PBXBuildFile; fileRef = A587FD011B895B5D00086EAD /* taserBot_idle_fire.png */; };
 		A587FD051B895B5D00086EAD /* taserBot_idle.png in Resources */ = {isa = PBXBuildFile; fileRef = A587FD021B895B5D00086EAD /* taserBot_idle.png */; };
 		A58A697A1B5F72E500FDB3C9 /* pausesymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = A58A69791B5F72E500FDB3C9 /* pausesymbol.png */; };
@@ -419,6 +420,8 @@
 		A580EB171BA7B6B500A2E05B /* background4-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background4-1.png"; sourceTree = "<group>"; };
 		A580EB181BA7B6B500A2E05B /* background4-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background4-2.png"; sourceTree = "<group>"; };
 		A580EB191BA7B6B500A2E05B /* background4-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background4-3.png"; sourceTree = "<group>"; };
+		A582C7F81C4FC96C004A4518 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
+		A582C7F91C4FC96C004A4518 /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		A587FD011B895B5D00086EAD /* taserBot_idle_fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taserBot_idle_fire.png; sourceTree = "<group>"; };
 		A587FD021B895B5D00086EAD /* taserBot_idle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taserBot_idle.png; sourceTree = "<group>"; };
 		A58A69791B5F72E500FDB3C9 /* pausesymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pausesymbol.png; sourceTree = "<group>"; };
@@ -812,6 +815,7 @@
 				A5ABBACE1B8D7E4800F08984 /* GameItems */,
 				A5200DE21B5516CA00143626 /* MainMenuView */,
 				A5200D6C1B5516CA00143626 /* GameStateMenuView */,
+				A582C7F71C4FC96C004A4518 /* StoreView */,
 				A54B03CA1B577F1C00C72129 /* GameInstanceView */,
 				A5200D731B5516CA00143626 /* HelpMenuView */,
 				A5200DE81B5516CA00143626 /* SettingsMenuView */,
@@ -863,6 +867,16 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		A582C7F71C4FC96C004A4518 /* StoreView */ = {
+			isa = PBXGroup;
+			children = (
+				A582C7F81C4FC96C004A4518 /* StoreViewController.h */,
+				A582C7F91C4FC96C004A4518 /* StoreViewController.m */,
+			);
+			name = StoreView;
+			path = "This is the End/StoreView";
+			sourceTree = SOURCE_ROOT;
 		};
 		A5904A3E1BBC58F900215790 /* gameText */ = {
 			isa = PBXGroup;
@@ -1601,6 +1615,7 @@
 				A5A0C4271B5514480090E087 /* AppDelegate.m in Sources */,
 				A5200DF91B5516CA00143626 /* HelpMenuVC.m in Sources */,
 				A577A20D1BA34E14004262EF /* Platform.m in Sources */,
+				A582C7FA1C4FC96C004A4518 /* StoreViewController.m in Sources */,
 				A54B03CD1B577F5000C72129 /* GameInstanceVC.m in Sources */,
 				A5785E661BA9E205001D7A23 /* GameAPI.m in Sources */,
 				A5200DF51B5516CA00143626 /* GameStateView.m in Sources */,

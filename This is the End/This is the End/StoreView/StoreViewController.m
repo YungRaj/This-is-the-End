@@ -1,19 +1,20 @@
 //
-//  HelpMenuVC.m
+//  StoreViewController.m
 //  This is the End
 //
-//  Created by Ilhan Raja on 6/21/15.
-//  Copyright © 2015 Ilhan-Parker. All rights reserved.
+//  Created by Ilhan Raja on 1/20/16.
+//  Copyright © 2016 Ilhan-Parker. All rights reserved.
 //
 
-#import "HelpMenuVC.h"
-#import "MainMenuViewController.h"
-#import "AppDelegate.h"
+#import "StoreViewController.h"
+#import "GameStateMenuVC.h"
 
+NSString *kStoreVCDismissKey = @"storeDismissKey";
 
-@interface HelpMenuVC () {
+@interface StoreViewController () {
     
 }
+
 
 @property (strong,nonatomic) UIButton *backButton;
 @property (strong,nonatomic) UITapGestureRecognizer *tapGesture;
@@ -24,7 +25,7 @@
 
 @end
 
-@implementation HelpMenuVC
+@implementation StoreViewController
 
 
 -(instancetype)init{
@@ -40,6 +41,13 @@
     return self;
 }
 
+-(void)loadView{
+    CGRect screen = [[UIScreen mainScreen] bounds];
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(screen.size.width/8,
+                                                         screen.size.height/8,
+                                                         screen.size.width*3/4,
+                                                         screen.size.height*3/4)];
+}
 
 -(void)viewDidLoad {
     [super viewDidLoad];
@@ -93,22 +101,27 @@
     self.line4.contents = border;
     
     CGRect frame;
-    CGRect screen = [UIScreen mainScreen].bounds;
+    CGRect lineVerticalFrame;
+    CGRect lineHorizontalFrame;
+    CGRect screen = self.view.frame;
     CGSize size = screen.size;
-    frame.size = CGSizeMake(screen.size.width,
-                            screen.size.height/
-                            (screen.size.width/(55/2)));
-    frame.origin = CGPointMake(0,0);
-    [self.line1 setFrame:frame];
-    frame.origin = CGPointMake(screen.size.width,0);
-    [self.line2 setFrame:frame];
+    lineHorizontalFrame.size = CGSizeMake(screen.size.width,
+                                          screen.size.height/
+                                          (screen.size.width/(55/2)));
+    lineVerticalFrame.size = CGSizeMake(screen.size.height,
+                                        screen.size.height/
+                                        (screen.size.width/(55/2)));
+    lineHorizontalFrame.origin = CGPointMake(0,0);
+    [self.line1 setFrame:lineHorizontalFrame];
+    lineVerticalFrame.origin = CGPointMake(screen.size.width,0);
+    [self.line2 setFrame:lineVerticalFrame];
     self.line2.transform = CATransform3DMakeRotation(M_PI/2,0,0,1);
-    frame.origin = CGPointMake(screen.size.width
-                               ,screen.size.height);
-    [self.line3 setFrame:frame];
+    lineHorizontalFrame.origin = CGPointMake(screen.size.width,
+                               screen.size.height);
+    [self.line3 setFrame:lineHorizontalFrame];
     self.line3.transform = CATransform3DMakeRotation(M_PI,0,0,1);
-    frame.origin = CGPointMake(0,screen.size.height);
-    [self.line4 setFrame:frame];
+    lineVerticalFrame.origin = CGPointMake(0,screen.size.height);
+    [self.line4 setFrame:lineVerticalFrame];
     self.line4.transform = CATransform3DMakeRotation(-M_PI/2,0,0,1);
     [[self.view layer] addSublayer:self.line2];
     [[self.view layer] addSublayer:self.line4];
@@ -134,14 +147,6 @@
     [[self.backButton layer] addSublayer:backText];
 }
 
--(MainMenuViewController*)MainMenuViewController{
-    for(UIViewController *childViewController in self.parentViewController.childViewControllers){
-        if([childViewController isKindOfClass:[MainMenuViewController class]]){
-            return (MainMenuViewController*)childViewController;
-        }
-    }
-    return nil;
-}
 
 -(void)setUpTapGesture{
     self.tapGesture =
@@ -154,18 +159,22 @@
 -(void)tapView:(UITapGestureRecognizer *)recognizer{
     CGPoint point = [recognizer locationInView:self.view];
     if(CGRectContainsPoint(self.backButton.frame,point)){
-        CATransition *transition = [CATransition animation];
-        transition.duration = 0.5;
-        transition.type = kCATransitionPush;
-        transition.subtype = kCATransitionFromBottom;
-        MainMenuViewController *mainMenuVC = [self MainMenuViewController];
-        UIViewController *parentVC = self.parentViewController;
-        [self.view removeFromSuperview];
-        [self removeFromParentViewController];
-        [parentVC.view addSubview:mainMenuVC.view];
-        [parentVC.view.layer addAnimation:transition forKey:nil];
+        CGRect oldFrame = self.view.frame;
+        CGRect newFrame = CGRectMake(oldFrame.origin.x,
+                                     oldFrame.origin.y-oldFrame.size.height,
+                                     oldFrame.size.width,
+                                     oldFrame.size.height);
+        [UIView animateWithDuration:0.8 animations:^{
+            [self.view setFrame:newFrame];
+        } completion:^(BOOL completion){
+            if(completion){
+                [self.view removeFromSuperview];
+                [self removeFromParentViewController];
+            }
+        }];
     }
 }
+
 
 
 @end

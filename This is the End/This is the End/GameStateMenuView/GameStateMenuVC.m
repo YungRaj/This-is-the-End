@@ -8,6 +8,7 @@
 
 #import "GameStateMenuVC.h"
 #import "MainMenuViewController.h"
+#import "StoreViewController.h"
 #import "AppDelegate.h"
 #import "GameStateView.h"
 #import "GameData.h"
@@ -328,7 +329,16 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         transition.subtype = kCATransitionFromLeft;
         [parentVC.view.layer addAnimation:transition forKey:nil];
     }if(CGRectContainsPoint(self.store.frame,point)){
-        
+        StoreViewController *storeVC = [[StoreViewController alloc] init];
+        UIViewController *parentVC = self.parentViewController;
+        [parentVC addChildViewController:storeVC];
+        [parentVC.view addSubview:storeVC.view];
+        [storeVC didMoveToParentViewController:parentVC];
+        CATransition *transition = [CATransition animation];
+        transition.duration = 0.5;
+        transition.type = kCATransitionPush;
+        transition.subtype = kCATransitionFromBottom;
+        [storeVC.view.layer addAnimation:transition forKey:nil];
     }
 }
 

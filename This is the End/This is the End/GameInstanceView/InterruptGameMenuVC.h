@@ -11,6 +11,7 @@
 typedef enum {
     InterruptedGamePaused,
     InterruptedGameOver,
+    InterruptedGameRetrievedItem,
     InterruptedGameLevelCompleted,
     InterruptedGameWorldCompleted,
 } InterruptedGameMode;

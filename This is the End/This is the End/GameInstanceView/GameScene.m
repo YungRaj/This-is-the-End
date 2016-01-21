@@ -478,7 +478,6 @@
 }
 
 -(void)didEndContact:(SKPhysicsContact*)contact{
-    ////////printf("End Contact\n");
     uint32_t bodyACategory = contact.bodyA.categoryBitMask;
     uint32_t bodyBCategory = contact.bodyB.categoryBitMask;
     SKNode *player;

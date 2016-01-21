@@ -163,8 +163,7 @@
     [self.stateText removeFromSuperlayer];
     [self.worldText removeFromSuperlayer];
     [self.worldNum removeFromSuperlayer];
-    if(self.worldBackground)
-        [self.worldBackground removeFromSuperlayer];
+    [self.worldBackground removeFromSuperlayer];
     [self.createText removeFromSuperlayer];
     [self.playText removeFromSuperlayer];
     [self.createGame removeFromSuperview];

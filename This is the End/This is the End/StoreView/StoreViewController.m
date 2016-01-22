@@ -199,6 +199,37 @@ NSString *kStoreVCDismissKey = @"storeDismissKey";
         cellRight.layer.borderWidth = cellLeft.layer.borderWidth;
         [self.storeContents addSubview:cellRight];
         
+        if(i==0){
+            CGRect layerFrame;
+            CALayer *coins = [CALayer layer];
+            CALayer *powerUps = [CALayer layer];
+            CALayer *badges = [CALayer layer];
+            coins.contents = (id)[UIImage imageWithContentsOfFile:
+                              [[NSBundle mainBundle] pathForResource:@"coins" ofType:@"png"]].CGImage;
+            powerUps.contents = (id)[UIImage imageWithContentsOfFile:
+                                  [[NSBundle mainBundle] pathForResource:@"powerups" ofType:@"png"]].CGImage;
+            badges.contents = (id)[UIImage imageWithContentsOfFile:
+                                  [[NSBundle mainBundle] pathForResource:@"badges" ofType:@"png"]].CGImage;
+            layerFrame = CGRectMake(frame.size.width/3,
+                               frame.size.height/4,
+                               frame.size.width/3,
+                               frame.size.height/2);
+            coins.frame = layerFrame;
+            [cellLeft.layer addSublayer:coins];
+            layerFrame = CGRectMake(frame.size.width/4,
+                                    frame.size.height/4,
+                                    frame.size.width/2,
+                                    frame.size.height/2);
+            powerUps.frame = layerFrame;
+            [cellMiddle.layer addSublayer:powerUps];
+            layerFrame = CGRectMake(frame.size.width/4,
+                                    frame.size.height/4,
+                                    frame.size.width/2,
+                                    frame.size.height/2);
+            badges.frame = layerFrame;
+            [cellRight.layer addSublayer:badges];
+        }
+        
         y+=frame.size.height;
     }
 }

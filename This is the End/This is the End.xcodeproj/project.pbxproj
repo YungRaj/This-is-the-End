@@ -235,6 +235,9 @@
 		A5BD44CA1B63511300C13467 /* playsymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BD44C61B63511300C13467 /* playsymbol.png */; };
 		A5BD44CC1B63511300C13467 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BD44C71B63511300C13467 /* save.png */; };
 		A5BD44D01B63511300C13467 /* shopsymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BD44C91B63511300C13467 /* shopsymbol.png */; };
+		A5BEF9DE1C51E55200B23F6C /* badges.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BEF9DB1C51E55200B23F6C /* badges.png */; };
+		A5BEF9DF1C51E55200B23F6C /* coins.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BEF9DC1C51E55200B23F6C /* coins.png */; };
+		A5BEF9E01C51E55200B23F6C /* powerups.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BEF9DD1C51E55200B23F6C /* powerups.png */; };
 		A5C139CF1B5E06AE00910C5A /* stormSix_standing_1.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C139CE1B5E06AE00910C5A /* stormSix_standing_1.png */; };
 		A5C4954B1BDEA27C0042C3A3 /* background3-1.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C495481BDEA27C0042C3A3 /* background3-1.png */; };
 		A5C4954C1BDEA27C0042C3A3 /* background3-2.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C495491BDEA27C0042C3A3 /* background3-2.png */; };
@@ -575,6 +578,9 @@
 		A5BD44C61B63511300C13467 /* playsymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playsymbol.png; sourceTree = "<group>"; };
 		A5BD44C71B63511300C13467 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 		A5BD44C91B63511300C13467 /* shopsymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shopsymbol.png; sourceTree = "<group>"; };
+		A5BEF9DB1C51E55200B23F6C /* badges.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badges.png; sourceTree = "<group>"; };
+		A5BEF9DC1C51E55200B23F6C /* coins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coins.png; sourceTree = "<group>"; };
+		A5BEF9DD1C51E55200B23F6C /* powerups.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powerups.png; sourceTree = "<group>"; };
 		A5C139CE1B5E06AE00910C5A /* stormSix_standing_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stormSix_standing_1.png; sourceTree = "<group>"; };
 		A5C495481BDEA27C0042C3A3 /* background3-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background3-1.png"; sourceTree = "<group>"; };
 		A5C495491BDEA27C0042C3A3 /* background3-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background3-2.png"; sourceTree = "<group>"; };
@@ -899,6 +905,9 @@
 				A5904A461BBC58F900215790 /* 7w.png */,
 				A5904A471BBC58F900215790 /* 8w.png */,
 				A5904A481BBC58F900215790 /* 9w.png */,
+				A5BEF9DB1C51E55200B23F6C /* badges.png */,
+				A5BEF9DC1C51E55200B23F6C /* coins.png */,
+				A5BEF9DD1C51E55200B23F6C /* powerups.png */,
 				A5904A491BBC58F900215790 /* scorew.png */,
 				A5760A601BCC7E7E00B3F95E /* healthw.png */,
 				A5AC1E101BCC45B0001542F1 /* livesw.png */,
@@ -1470,6 +1479,7 @@
 				A5AA71BA1B6B5DD4005A1105 /* platform4.png in Resources */,
 				A59501DC1B55A8AD00B37EDE /* ls8.png in Resources */,
 				A59501EC1B55A8AD00B37EDE /* 3.png in Resources */,
+				A5BEF9DE1C51E55200B23F6C /* badges.png in Resources */,
 				A595917C1B5CC99B00A6D1CA /* new.png in Resources */,
 				A503CA811BE3E30800D8F815 /* Health3.png in Resources */,
 				A59501CC1B55A8AD00B37EDE /* ls2.png in Resources */,
@@ -1505,6 +1515,7 @@
 				A5655A971B90DC7200225BA3 /* background2-1.png in Resources */,
 				A5CF72EC1B869C6B00D6A46C /* missileBot_walk_fire5.png in Resources */,
 				A5F7E0261B5CA4230091B485 /* stormSix_walkR_4.png in Resources */,
+				A5BEF9E01C51E55200B23F6C /* powerups.png in Resources */,
 				A596CC161B72B6CC00709FC8 /* mm1.png in Resources */,
 				A596CC1C1B72B6CC00709FC8 /* mm4.png in Resources */,
 				A5200DFB1B5516CA00143626 /* Images.xcassets in Resources */,
@@ -1578,6 +1589,7 @@
 				A503CA771BE3E30800D8F815 /* Defense1.png in Resources */,
 				A59501C41B55A8AD00B37EDE /* ls16.png in Resources */,
 				A59501561B55A8AD00B37EDE /* background7_thumb.png in Resources */,
+				A5BEF9DF1C51E55200B23F6C /* coins.png in Resources */,
 				A5904A521BBC58F900215790 /* 7w.png in Resources */,
 				A52414191B796248004B4E4D /* background1-1.png in Resources */,
 				A59501DE1B55A8AD00B37EDE /* ls9.png in Resources */,

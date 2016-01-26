@@ -243,15 +243,15 @@
 		A5C4954C1BDEA27C0042C3A3 /* background3-2.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C495491BDEA27C0042C3A3 /* background3-2.png */; };
 		A5C4954D1BDEA27C0042C3A3 /* background3-3.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C4954A1BDEA27C0042C3A3 /* background3-3.png */; };
 		A5C7F9A51B5A28A9006606DC /* Attack.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F9961B5A28A9006606DC /* Attack.png */; };
-		A5C7F9A71B5A28A9006606DC /* AttackUpDefenseDown.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F9971B5A28A9006606DC /* AttackUpDefenseDown.png */; };
+		A5C7F9A71B5A28A9006606DC /* AUpDDown.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F9971B5A28A9006606DC /* AUpDDown.png */; };
 		A5C7F9A91B5A28A9006606DC /* CloseCall.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F9981B5A28A9006606DC /* CloseCall.png */; };
 		A5C7F9AB1B5A28A9006606DC /* Coin.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F9991B5A28A9006606DC /* Coin.png */; };
-		A5C7F9AD1B5A28A9006606DC /* DecreaseEnemyAttack.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F99A1B5A28A9006606DC /* DecreaseEnemyAttack.png */; };
-		A5C7F9AF1B5A28A9006606DC /* DefenseUpAttackDown.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F99B1B5A28A9006606DC /* DefenseUpAttackDown.png */; };
+		A5C7F9AD1B5A28A9006606DC /* DownEnemyA.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F99A1B5A28A9006606DC /* DownEnemyA.png */; };
+		A5C7F9AF1B5A28A9006606DC /* DUpADown.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F99B1B5A28A9006606DC /* DUpADown.png */; };
 		A5C7F9B11B5A28A9006606DC /* DodgeAttack.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F99C1B5A28A9006606DC /* DodgeAttack.png */; };
 		A5C7F9B31B5A28A9006606DC /* God.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F99D1B5A28A9006606DC /* God.png */; };
 		A5C7F9B51B5A28A9006606DC /* Health.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F99E1B5A28A9006606DC /* Health.png */; };
-		A5C7F9B71B5A28A9006606DC /* IncreasePowerUpTime.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F99F1B5A28A9006606DC /* IncreasePowerUpTime.png */; };
+		A5C7F9B71B5A28A9006606DC /* PlusPUpTime.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F99F1B5A28A9006606DC /* PlusPUpTime.png */; };
 		A5C7F9B91B5A28A9006606DC /* Jump.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F9A01B5A28A9006606DC /* Jump.png */; };
 		A5C7F9BB1B5A28A9006606DC /* JumpAttack.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F9A11B5A28A9006606DC /* JumpAttack.png */; };
 		A5C7F9BD1B5A28A9006606DC /* LastStand.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C7F9A21B5A28A9006606DC /* LastStand.png */; };
@@ -586,15 +586,15 @@
 		A5C495491BDEA27C0042C3A3 /* background3-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background3-2.png"; sourceTree = "<group>"; };
 		A5C4954A1BDEA27C0042C3A3 /* background3-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background3-3.png"; sourceTree = "<group>"; };
 		A5C7F9961B5A28A9006606DC /* Attack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Attack.png; sourceTree = "<group>"; };
-		A5C7F9971B5A28A9006606DC /* AttackUpDefenseDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AttackUpDefenseDown.png; sourceTree = "<group>"; };
+		A5C7F9971B5A28A9006606DC /* AUpDDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUpDDown.png; sourceTree = "<group>"; };
 		A5C7F9981B5A28A9006606DC /* CloseCall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseCall.png; sourceTree = "<group>"; };
 		A5C7F9991B5A28A9006606DC /* Coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Coin.png; sourceTree = "<group>"; };
-		A5C7F99A1B5A28A9006606DC /* DecreaseEnemyAttack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DecreaseEnemyAttack.png; sourceTree = "<group>"; };
-		A5C7F99B1B5A28A9006606DC /* DefenseUpAttackDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefenseUpAttackDown.png; sourceTree = "<group>"; };
+		A5C7F99A1B5A28A9006606DC /* DownEnemyA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownEnemyA.png; sourceTree = "<group>"; };
+		A5C7F99B1B5A28A9006606DC /* DUpADown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DUpADown.png; sourceTree = "<group>"; };
 		A5C7F99C1B5A28A9006606DC /* DodgeAttack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DodgeAttack.png; sourceTree = "<group>"; };
 		A5C7F99D1B5A28A9006606DC /* God.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = God.png; sourceTree = "<group>"; };
 		A5C7F99E1B5A28A9006606DC /* Health.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Health.png; sourceTree = "<group>"; };
-		A5C7F99F1B5A28A9006606DC /* IncreasePowerUpTime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IncreasePowerUpTime.png; sourceTree = "<group>"; };
+		A5C7F99F1B5A28A9006606DC /* PlusPUpTime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlusPUpTime.png; sourceTree = "<group>"; };
 		A5C7F9A01B5A28A9006606DC /* Jump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jump.png; sourceTree = "<group>"; };
 		A5C7F9A11B5A28A9006606DC /* JumpAttack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JumpAttack.png; sourceTree = "<group>"; };
 		A5C7F9A21B5A28A9006606DC /* LastStand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LastStand.png; sourceTree = "<group>"; };
@@ -1223,20 +1223,20 @@
 			isa = PBXGroup;
 			children = (
 				A5C7F9961B5A28A9006606DC /* Attack.png */,
-				A5C7F9971B5A28A9006606DC /* AttackUpDefenseDown.png */,
+				A5C7F9971B5A28A9006606DC /* AUpDDown.png */,
+				A5C7F99B1B5A28A9006606DC /* DUpADown.png */,
 				A5C7F9981B5A28A9006606DC /* CloseCall.png */,
-				A5C7F9991B5A28A9006606DC /* Coin.png */,
-				A5C7F99A1B5A28A9006606DC /* DecreaseEnemyAttack.png */,
-				A5C7F99B1B5A28A9006606DC /* DefenseUpAttackDown.png */,
 				A5C7F99C1B5A28A9006606DC /* DodgeAttack.png */,
-				A5C7F99D1B5A28A9006606DC /* God.png */,
+				A5C7F9A21B5A28A9006606DC /* LastStand.png */,
 				A5C7F99E1B5A28A9006606DC /* Health.png */,
-				A5C7F99F1B5A28A9006606DC /* IncreasePowerUpTime.png */,
+				A5C7F9A31B5A28A9006606DC /* RestoreHealth.png */,
+				A5C7F9991B5A28A9006606DC /* Coin.png */,
+				A5C7F99F1B5A28A9006606DC /* PlusPUpTime.png */,
+				A5C7F99A1B5A28A9006606DC /* DownEnemyA.png */,
+				A5C7F9A41B5A28A9006606DC /* Run.png */,
 				A5C7F9A01B5A28A9006606DC /* Jump.png */,
 				A5C7F9A11B5A28A9006606DC /* JumpAttack.png */,
-				A5C7F9A21B5A28A9006606DC /* LastStand.png */,
-				A5C7F9A31B5A28A9006606DC /* RestoreHealth.png */,
-				A5C7F9A41B5A28A9006606DC /* Run.png */,
+				A5C7F99D1B5A28A9006606DC /* God.png */,
 			);
 			path = badges;
 			sourceTree = "<group>";
@@ -1393,7 +1393,7 @@
 				A503CA711BE3E30800D8F815 /* Attack3.png in Resources */,
 				A59591781B5CC99B00A6D1CA /* help.png in Resources */,
 				A596CC201B72B6CC00709FC8 /* mm6.png in Resources */,
-				A5C7F9B71B5A28A9006606DC /* IncreasePowerUpTime.png in Resources */,
+				A5C7F9B71B5A28A9006606DC /* PlusPUpTime.png in Resources */,
 				A595019C1B55A8AD00B37EDE /* gamestate2.png in Resources */,
 				A503CA821BE3E30800D8F815 /* Health4.png in Resources */,
 				A5C7F9B31B5A28A9006606DC /* God.png in Resources */,
@@ -1564,7 +1564,7 @@
 				A5244C751B5DE778004D4583 /* stormSix_walkP_8.png in Resources */,
 				A5655A981B90DC7200225BA3 /* background2-2.png in Resources */,
 				A57D48E71BDD85BE00FC813F /* launchscreen@3x.png in Resources */,
-				A5C7F9AF1B5A28A9006606DC /* DefenseUpAttackDown.png in Resources */,
+				A5C7F9AF1B5A28A9006606DC /* DUpADown.png in Resources */,
 				A5ABBACC1B8D7DBB00F08984 /* mysteryblock3.png in Resources */,
 				A5904A4C1BBC58F900215790 /* 1w.png in Resources */,
 				A59501B81B55A8AD00B37EDE /* ls10.png in Resources */,
@@ -1605,8 +1605,8 @@
 				A59501961B55A8AD00B37EDE /* v_stand.png in Resources */,
 				A5656E561B6613A3007EF22D /* stormSix_jumpingR_6.png in Resources */,
 				A524141B1B796248004B4E4D /* background1-2.png in Resources */,
-				A5C7F9A71B5A28A9006606DC /* AttackUpDefenseDown.png in Resources */,
-				A5C7F9AD1B5A28A9006606DC /* DecreaseEnemyAttack.png in Resources */,
+				A5C7F9A71B5A28A9006606DC /* AUpDDown.png in Resources */,
+				A5C7F9AD1B5A28A9006606DC /* DownEnemyA.png in Resources */,
 				A59501D41B55A8AD00B37EDE /* ls4.png in Resources */,
 				A5C7F9C11B5A28A9006606DC /* Run.png in Resources */,
 				A5F7E0161B5CA4230091B485 /* stormSix_walkP_shoot_3.png in Resources */,

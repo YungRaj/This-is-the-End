@@ -21,16 +21,16 @@ const NSString *kPowerUpDefense = @"Defense";
 const NSString *kPowerUpHealth = @"Health";
 
 const NSString *kBadgeAttack = @"Attack";
-const NSString *kBadgeAttackUpDefenseDown = @"AttackUpDefenseDown";
-const NSString *kBadgeDefenseUpAttackDown = @"DefenseUpAttackDown";
+const NSString *kBadgeAUpDDown = @"AUpDDown";
+const NSString *kBadgeDUpADown = @"DUpADown";
 const NSString *kBadgeCloseCall = @"CloseCall";
 const NSString *kBadgeDodgeAttack = @"DodgeAttack";
 const NSString *kBadgeLastStand = @"LastStand";
 const NSString *kBadgeHealth = @"Health";
 const NSString *kBadgeRestoreHealth = @"RestoreHealth";
 const NSString *kBadgeCoin = @"Coin";
-const NSString *kBadgeIncreasePowerUpTime = @"IncreasePowerUpTime";
-const NSString *kBadgeDecreaseEnemyAttack = @"DecreaseEnemyAttack";
+const NSString *kBadgePlusPUpTime = @"PlusPUpTime";
+const NSString *kBadgeDownEnemyA = @"DownEnemyA";
 const NSString *kBadgeRun = @"Run";
 const NSString *kBadgeJump = @"Jump";
 const NSString *kBadgeJumpAttack = @"JumpAttack";
@@ -95,7 +95,7 @@ BOOL checkCollision(SKNode *a, SKNode *b){
 NSInteger xScaleNegativeDirectionFromIOSVersion(){
     NSOperatingSystemVersion iOS_9 = (NSOperatingSystemVersion){ 9, 0 };
     if([[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:iOS_9]){
-        return -1;
+        return 1;
     }
     return -1;
 }

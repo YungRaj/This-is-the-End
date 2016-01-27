@@ -61,6 +61,7 @@
 		A52D92361B5902C2000FF177 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A52D92351B5902C2000FF177 /* GameScene.m */; };
 		A52D92371B5902C2000FF177 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A52D92351B5902C2000FF177 /* GameScene.m */; };
 		A5361D591C59485300066C07 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = A5361D581C59485300066C07 /* Coin.m */; };
+		A5361D5B1C594D0B00066C07 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5361D5A1C594D0B00066C07 /* StoreKit.framework */; };
 		A54B03CD1B577F5000C72129 /* GameInstanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A54B03CC1B577F5000C72129 /* GameInstanceVC.m */; };
 		A54B03CE1B577F5000C72129 /* GameInstanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A54B03CC1B577F5000C72129 /* GameInstanceVC.m */; };
 		A5609CC11B7009AC00D77FB8 /* GameContents.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5609CC01B7009AC00D77FB8 /* GameContents.plist */; };
@@ -391,6 +392,7 @@
 		A52D92351B5902C2000FF177 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		A5361D571C59485300066C07 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
 		A5361D581C59485300066C07 /* Coin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coin.m; sourceTree = "<group>"; };
+		A5361D5A1C594D0B00066C07 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A54B03CB1B577F5000C72129 /* GameInstanceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInstanceVC.h; sourceTree = "<group>"; };
 		A54B03CC1B577F5000C72129 /* GameInstanceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInstanceVC.m; sourceTree = "<group>"; };
 		A5609CC01B7009AC00D77FB8 /* GameContents.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = GameContents.plist; path = "This is the End/GameContents.plist"; sourceTree = SOURCE_ROOT; };
@@ -677,6 +679,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5361D5B1C594D0B00066C07 /* StoreKit.framework in Frameworks */,
 				A52D92331B58F661000FF177 /* SpriteKit.framework in Frameworks */,
 				A5E23BC41B55CCEC002B250B /* GameKit.framework in Frameworks */,
 			);
@@ -799,13 +802,22 @@
 			path = "This is the End/SettingsMenuView";
 			sourceTree = SOURCE_ROOT;
 		};
+		A5361D5C1C594D2C00066C07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5361D5A1C594D0B00066C07 /* StoreKit.framework */,
+				A52D92321B58F661000FF177 /* SpriteKit.framework */,
+				A5E23BC31B55CCEC002B250B /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A54124401B278401007EEB15 = {
 			isa = PBXGroup;
 			children = (
-				A52D92321B58F661000FF177 /* SpriteKit.framework */,
-				A5E23BC31B55CCEC002B250B /* GameKit.framework */,
 				A541244B1B278401007EEB15 /* This is the End */,
 				A5585D2A1B551A6000490C8A /* This is the End Tests */,
+				A5361D5C1C594D2C00066C07 /* Frameworks */,
 				A541244A1B278401007EEB15 /* Products */,
 			);
 			sourceTree = "<group>";

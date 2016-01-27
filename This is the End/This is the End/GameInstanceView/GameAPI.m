@@ -10,6 +10,7 @@
 #import "GameScene.h"
 #import "PowerUp.h"
 #import "Badge.h"
+#import "Coin.h"
 
 const NSString *kPowerUpGod = @"God";
 const NSString *kPowerUpCoin = @"Coin";
@@ -95,7 +96,7 @@ BOOL checkCollision(SKNode *a, SKNode *b){
 NSInteger xScaleNegativeDirectionFromIOSVersion(){
     NSOperatingSystemVersion iOS_9 = (NSOperatingSystemVersion){ 9, 0 };
     if([[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:iOS_9]){
-        return 1;
+        return -1;
     }
     return -1;
 }
@@ -104,8 +105,10 @@ SKSpriteNode<CollectableItem>* randomItem(){
     NSInteger random = arc4random()%((numberOfBadges+numberOfPowerUps)*2);
     if(random==10){
         return randomBadge();
-    }else{
+    }else if(random%2==0){
         return randomPowerUp();
+    }else{
+        return newCoin();
     }
     return nil;
 }
@@ -116,5 +119,9 @@ PowerUp* randomPowerUp(){
 
 Badge* randomBadge(){
     return [[Badge alloc] initWithType:arc4random()%numberOfBadges];
+}
+
+Coin* newCoin(){
+    return [[Coin alloc] init];
 }
 

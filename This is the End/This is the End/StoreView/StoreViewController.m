@@ -251,7 +251,7 @@ NSString *kStoreVCDismissKey = @"storeDismissKey";
                 label.frame = CGRectMake(storeItemSize.width/4-(sizeText*[powerUpName length]/2),
                                          storeItemSize.height/1.75,
                                          sizeText*[powerUpName length],
-                                         sizeText);
+                                         sizeText*1.2);
                 label.adjustsFontSizeToFitWidth = YES;
                 label.textAlignment = NSTextAlignmentCenter;
                 [cellMiddle addSubview:label];
@@ -279,7 +279,7 @@ NSString *kStoreVCDismissKey = @"storeDismissKey";
                 label.frame = CGRectMake(storeItemSize.width/4-(sizeText*[badgeName length]/2),
                                          storeItemSize.height/1.75,
                                          sizeText*[badgeName length],
-                                         sizeText);
+                                         sizeText*1.2);
                 label.adjustsFontSizeToFitWidth = YES;
                 label.textAlignment = NSTextAlignmentCenter;
                 [cellRight addSubview:label];

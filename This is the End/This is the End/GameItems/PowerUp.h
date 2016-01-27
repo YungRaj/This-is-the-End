@@ -21,12 +21,11 @@
 #import "MovingObject.h"
 #import "CollectableItem.h"
 
-#define numberOfPowerUps 6
+#define numberOfPowerUps 5
 
 
 
 typedef enum{
-    Coin,
     Health,
     Attack,
     Defense,
@@ -34,8 +33,7 @@ typedef enum{
     Run,
 } PowerUpType;
 
-static NSString *powerUps[] = {@"Coin",
-                               @"Health",
+static NSString *powerUps[] = {@"Health",
                                @"Attack",
                                @"Defense",
                                @"Jump",

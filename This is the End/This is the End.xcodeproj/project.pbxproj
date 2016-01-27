@@ -60,6 +60,7 @@
 		A52D92331B58F661000FF177 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52D92321B58F661000FF177 /* SpriteKit.framework */; };
 		A52D92361B5902C2000FF177 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A52D92351B5902C2000FF177 /* GameScene.m */; };
 		A52D92371B5902C2000FF177 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A52D92351B5902C2000FF177 /* GameScene.m */; };
+		A5361D591C59485300066C07 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = A5361D581C59485300066C07 /* Coin.m */; };
 		A54B03CD1B577F5000C72129 /* GameInstanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A54B03CC1B577F5000C72129 /* GameInstanceVC.m */; };
 		A54B03CE1B577F5000C72129 /* GameInstanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A54B03CC1B577F5000C72129 /* GameInstanceVC.m */; };
 		A5609CC11B7009AC00D77FB8 /* GameContents.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5609CC01B7009AC00D77FB8 /* GameContents.plist */; };
@@ -388,6 +389,8 @@
 		A52D92321B58F661000FF177 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		A52D92341B5902C2000FF177 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		A52D92351B5902C2000FF177 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		A5361D571C59485300066C07 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
+		A5361D581C59485300066C07 /* Coin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coin.m; sourceTree = "<group>"; };
 		A54B03CB1B577F5000C72129 /* GameInstanceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInstanceVC.h; sourceTree = "<group>"; };
 		A54B03CC1B577F5000C72129 /* GameInstanceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInstanceVC.m; sourceTree = "<group>"; };
 		A5609CC01B7009AC00D77FB8 /* GameContents.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = GameContents.plist; path = "This is the End/GameContents.plist"; sourceTree = SOURCE_ROOT; };
@@ -1185,6 +1188,8 @@
 				A5ABBAD21B8D7E4800F08984 /* Badge.m */,
 				A5A31C661BDFF16E001A1881 /* PowerUp.h */,
 				A5A31C671BDFF16E001A1881 /* PowerUp.m */,
+				A5361D571C59485300066C07 /* Coin.h */,
+				A5361D581C59485300066C07 /* Coin.m */,
 				A5ABBAD51B8D7E4800F08984 /* MovingObject.h */,
 				A57A670D1BBB0FB500436B62 /* Player.h */,
 				A57A670E1BBB0FB500436B62 /* Player.m */,
@@ -1650,6 +1655,7 @@
 				A5200ECC1B55196A00143626 /* main.m in Sources */,
 				A52D92361B5902C2000FF177 /* GameScene.m in Sources */,
 				A5ABBAD81B8D7E4800F08984 /* Achievement.m in Sources */,
+				A5361D591C59485300066C07 /* Coin.m in Sources */,
 				A5B6B6631B97E95600086AD0 /* Bullet.m in Sources */,
 				A5ECEB171B71542800117AA6 /* PlayerSettings.m in Sources */,
 				A5ABBADC1B8D7E4800F08984 /* Enemy.m in Sources */,

@@ -85,7 +85,6 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    NSLog(@"View has appeared");
 
 }
 

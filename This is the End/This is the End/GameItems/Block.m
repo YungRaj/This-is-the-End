@@ -11,6 +11,7 @@
 #import "PowerUp.h"
 #import "GameScene.h"
 #import "Badge.h"
+#import "Coin.h"
 
 NSString *kBlockActionActivate = @"activate";
 
@@ -48,6 +49,10 @@ NSString *kBlockActionActivate = @"activate";
                 powerUp.physicsBody = [SKPhysicsBody
                                          bodyWithTexture:[SKTexture textureWithImageNamed:name]
                                                     size:powerUp.size];
+            }else if([item isKindOfClass:[Coin class]]){
+                Coin *coin = (Coin*)item;
+                coin.physicsBody = [SKPhysicsBody bodyWithTexture:[SKTexture textureWithImageNamed:@"Coin1"]
+                                                             size:coin.size];
             }
             switch(arc4random()%2){
                 case 0:

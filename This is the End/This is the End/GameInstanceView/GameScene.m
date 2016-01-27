@@ -473,6 +473,9 @@
         }else if([item isKindOfClass:[Badge class]]){
             Badge *badge = (Badge*)item;
             [badge activate];
+        }else if([item conformsToProtocol:@protocol(CollectableItem)]){
+            id<CollectableItem> collectableItem = (id<CollectableItem>)item;
+            [collectableItem activate];
         }
     }
 }

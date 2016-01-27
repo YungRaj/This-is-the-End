@@ -1,58 +1,45 @@
 //
-//  PowerUp.m
+//  Coin.m
 //  This is the End
 //
-//  Created by Ilhan Raja on 10/27/15.
-//  Copyright © 2015 Ilhan-Parker. All rights reserved.
+//  Created by Ilhan Raja on 1/27/16.
+//  Copyright © 2016 Ilhan-Parker. All rights reserved.
 //
 
-#import "PowerUp.h"
+#import "Coin.h"
 #import "GameScene.h"
-#import "Player.h"
 #import "GameData.h"
-
-NSString *kPowerUpActionAnimation = @"powerUpAnimation";
-NSString *kPowerUpActionDisappear = @"powerUpDisappear";
-
-@interface PowerUp () {
-    
-}
+NSString *kCoinActionAnimation = @"coinAnimation";
+NSString *kCoinActionDisappear = @"coinDisappear";
 
 
-@end
-
-@implementation PowerUp
+@implementation Coin
 
 
--(instancetype)initWithType:(PowerUpType)type{
+-(instancetype)init{
     self = [super init];
     if(self){
-        _type = type;
         [self setImages];
     }
     return self;
 }
 
 -(void)setImages{
-    PowerUpType type = self.type;
-    NSString *powerUpName = powerUps[type];
     NSMutableArray *textures = [NSMutableArray array];
     for(int i=1; i<=4; i++){
-        NSString *imageName = [NSString stringWithFormat:@"%@%d",powerUpName,i];
+        NSString *imageName = [NSString stringWithFormat:@"Coin%d",i];
         [textures addObject:[SKTexture textureWithImageNamed:imageName]];
     }
     SKAction *action = [SKAction animateWithTextures:textures timePerFrame:0.2];
     action = [SKAction repeatActionForever:action];
-    [self runAction:action withKey:kPowerUpActionAnimation];
+    [self runAction:action withKey:kCoinActionAnimation];
     
 }
-
-
 
 -(void)activate{
     GameScene *scene = (GameScene*)self.scene;
     GameData *state = scene.state;
-    [state addPowerUp:self];
+    state.coins = state.coins + 1;
     [self removeAllActions];
     self.physicsBody = nil;
     SKTexture *texture1 = [SKTexture textureWithImageNamed:@"sparkle1"];
@@ -64,9 +51,7 @@ NSString *kPowerUpActionDisappear = @"powerUpDisappear";
         [self removeFromParent];
     }];
     SKAction *action = [SKAction sequence:@[disappear,block]];
-    [self runAction:action withKey:kPowerUpActionDisappear];
+    [self runAction:action withKey:kCoinActionDisappear];
 }
-
-
 
 @end

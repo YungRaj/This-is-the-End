@@ -14,6 +14,7 @@
 
 @class PowerUp;
 @class Badge;
+@class Coin;
 @protocol CollectableItem;
 
 static const uint32_t playerMask = 0x1 << 0;
@@ -69,5 +70,6 @@ BOOL checkCollision(SKNode *a, SKNode *b);
 SKSpriteNode<CollectableItem>* randomItem();
 PowerUp* randomPowerUp();
 Badge* randomBadge();
+Coin* newCoin();
 NSInteger xScaleNegativeDirectionFromIOSVersion();
 

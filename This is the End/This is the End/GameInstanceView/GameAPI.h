@@ -67,6 +67,7 @@ extern NSString *kMainMenuResumeFrame;
 
 BOOL checkAllCollisions(SKNode *node);
 BOOL checkCollision(SKNode *a, SKNode *b);
+
 SKSpriteNode<CollectableItem>* randomItem();
 PowerUp* randomPowerUp();
 Badge* randomBadge();

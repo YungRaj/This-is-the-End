@@ -192,6 +192,10 @@
 		A596CC281B72B6CC00709FC8 /* mm10.png in Resources */ = {isa = PBXBuildFile; fileRef = A596CC141B72B6CC00709FC8 /* mm10.png */; };
 		A596CC2A1B72B6CC00709FC8 /* mm11.png in Resources */ = {isa = PBXBuildFile; fileRef = A596CC151B72B6CC00709FC8 /* mm11.png */; };
 		A599FE151B6C905800C72463 /* stormSix_physicsBody.png in Resources */ = {isa = PBXBuildFile; fileRef = A599FE141B6C905800C72463 /* stormSix_physicsBody.png */; };
+		A59DC6421C5C4CB60095C0FD /* CoinTenThousand.png in Resources */ = {isa = PBXBuildFile; fileRef = A59DC63E1C5C4CB60095C0FD /* CoinTenThousand.png */; };
+		A59DC6431C5C4CB60095C0FD /* CoinOneThousand.png in Resources */ = {isa = PBXBuildFile; fileRef = A59DC63F1C5C4CB60095C0FD /* CoinOneThousand.png */; };
+		A59DC6441C5C4CB60095C0FD /* CoinOneHundred.png in Resources */ = {isa = PBXBuildFile; fileRef = A59DC6401C5C4CB60095C0FD /* CoinOneHundred.png */; };
+		A59DC6451C5C4CB60095C0FD /* CoinInfinity.png in Resources */ = {isa = PBXBuildFile; fileRef = A59DC6411C5C4CB60095C0FD /* CoinInfinity.png */; };
 		A5A0C4271B5514480090E087 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A0C4261B5514480090E087 /* AppDelegate.m */; };
 		A5A18F981B94CC8D0068476E /* stormSix_death_1.png in Resources */ = {isa = PBXBuildFile; fileRef = A5A18F931B94CC8D0068476E /* stormSix_death_1.png */; };
 		A5A18F991B94CC8D0068476E /* stormSix_death_2.png in Resources */ = {isa = PBXBuildFile; fileRef = A5A18F941B94CC8D0068476E /* stormSix_death_2.png */; };
@@ -531,6 +535,10 @@
 		A596CC141B72B6CC00709FC8 /* mm10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mm10.png; sourceTree = "<group>"; };
 		A596CC151B72B6CC00709FC8 /* mm11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mm11.png; sourceTree = "<group>"; };
 		A599FE141B6C905800C72463 /* stormSix_physicsBody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stormSix_physicsBody.png; sourceTree = "<group>"; };
+		A59DC63E1C5C4CB60095C0FD /* CoinTenThousand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoinTenThousand.png; sourceTree = "<group>"; };
+		A59DC63F1C5C4CB60095C0FD /* CoinOneThousand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoinOneThousand.png; sourceTree = "<group>"; };
+		A59DC6401C5C4CB60095C0FD /* CoinOneHundred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoinOneHundred.png; sourceTree = "<group>"; };
+		A59DC6411C5C4CB60095C0FD /* CoinInfinity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoinInfinity.png; sourceTree = "<group>"; };
 		A5A0C3FF1B55139D0090E087 /* This is the End.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "This is the End.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A0C4171B55139D0090E087 /* This is the End Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "This is the End Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A0C4251B5514470090E087 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "This is the End/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
@@ -936,13 +944,14 @@
 		A59500D41B55A8AD00B37EDE /* imgs */ = {
 			isa = PBXGroup;
 			children = (
+				A59DC63D1C5C4CB60095C0FD /* storeitems */,
 				A503CA561BE3E2FA00D8F815 /* powerups */,
+				A5C7F9951B5A28A9006606DC /* badges */,
 				A5904A3E1BBC58F900215790 /* gameText */,
 				A5AEE5E11B97C9010029A4BF /* animations */,
 				A5ABBAC11B8D7D9E00F08984 /* blocks */,
 				A5F1C8BE1B69FBF1000FBA02 /* menu */,
 				A595915C1B5CC99B00A6D1CA /* buttons */,
-				A5C7F9951B5A28A9006606DC /* badges */,
 				A5AA71AE1B6B5DA6005A1105 /* platforms */,
 				A59500D51B55A8AD00B37EDE /* backgrounds */,
 				A59500F21B55A8AD00B37EDE /* char */,
@@ -1163,6 +1172,17 @@
 				A595916B1B5CC99B00A6D1CA /* world.png */,
 			);
 			path = buttons;
+			sourceTree = "<group>";
+		};
+		A59DC63D1C5C4CB60095C0FD /* storeitems */ = {
+			isa = PBXGroup;
+			children = (
+				A59DC63E1C5C4CB60095C0FD /* CoinTenThousand.png */,
+				A59DC63F1C5C4CB60095C0FD /* CoinOneThousand.png */,
+				A59DC6401C5C4CB60095C0FD /* CoinOneHundred.png */,
+				A59DC6411C5C4CB60095C0FD /* CoinInfinity.png */,
+			);
+			path = storeitems;
 			sourceTree = "<group>";
 		};
 		A5AA71AE1B6B5DA6005A1105 /* platforms */ = {
@@ -1441,6 +1461,7 @@
 				A5D264AD1BE7ED9300C6E29E /* Coin2.png in Resources */,
 				A5CF72D21B869C6B00D6A46C /* missileBot_Idle_fire1.png in Resources */,
 				A59501BE1B55A8AD00B37EDE /* ls13.png in Resources */,
+				A59DC6421C5C4CB60095C0FD /* CoinTenThousand.png in Resources */,
 				A5F1C8C91B69FBF1000FBA02 /* widthborder.png in Resources */,
 				A5AF3F2E1C509A4500A727B0 /* sparkle1.png in Resources */,
 				A596CC241B72B6CC00709FC8 /* mm8.png in Resources */,
@@ -1482,6 +1503,7 @@
 				A59591841B5CC99B00A6D1CA /* settings.png in Resources */,
 				A5C7F9A51B5A28A9006606DC /* Attack.png in Resources */,
 				A5F1C8B71B69FB30000FBA02 /* retry.png in Resources */,
+				A59DC6431C5C4CB60095C0FD /* CoinOneThousand.png in Resources */,
 				A59501D21B55A8AD00B37EDE /* ls3.png in Resources */,
 				A59501581B55A8AD00B37EDE /* background_space_overlay.png in Resources */,
 				A5AA71BE1B6B5DD4005A1105 /* platform7.png in Resources */,
@@ -1514,6 +1536,7 @@
 				A5F7E01A1B5CA4230091B485 /* stormSix_walkP_shoot_5.png in Resources */,
 				A587FD031B895B5D00086EAD /* taserBot_idle_fire.png in Resources */,
 				A5AEE5EB1B97C9110029A4BF /* explosion_4.png in Resources */,
+				A59DC6451C5C4CB60095C0FD /* CoinInfinity.png in Resources */,
 				A5904A561BBC58F900215790 /* worldw.png in Resources */,
 				A5B5D9F21C50A28C0030F1EA /* store.png in Resources */,
 				A57D48E11BDD833100FC813F /* LaunchScreen.xib in Resources */,
@@ -1562,6 +1585,7 @@
 				A503CA801BE3E30800D8F815 /* Health2.png in Resources */,
 				A596CC261B72B6CC00709FC8 /* mm9.png in Resources */,
 				A5CF72E41B869C6B00D6A46C /* missileBot_walk_fire1.png in Resources */,
+				A59DC6441C5C4CB60095C0FD /* CoinOneHundred.png in Resources */,
 				A5656E501B6613A3007EF22D /* stormSix_jumpingR_3.png in Resources */,
 				A596CC2A1B72B6CC00709FC8 /* mm11.png in Resources */,
 				A59501741B55A8AD00B37EDE /* alienA_projectile.png in Resources */,

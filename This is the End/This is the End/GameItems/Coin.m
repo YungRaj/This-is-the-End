@@ -9,9 +9,16 @@
 #import "Coin.h"
 #import "GameScene.h"
 #import "GameData.h"
+
 NSString *kCoinActionAnimation = @"coinAnimation";
 NSString *kCoinActionDisappear = @"coinDisappear";
 
+
+@interface Coin () {
+    
+}
+
+@end
 
 @implementation Coin
 

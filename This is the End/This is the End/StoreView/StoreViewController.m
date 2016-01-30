@@ -10,6 +10,7 @@
 #import "GameStateMenuVC.h"
 #import "Badge.h"
 #import "PowerUp.h"
+#import "Coin.h"
 
 NSString *kStoreVCDismissKey = @"storeDismissKey";
 

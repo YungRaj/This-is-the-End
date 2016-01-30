@@ -352,7 +352,6 @@
 }
 
 -(void)update:(NSTimeInterval)currentTime{
-    printf("%ld\n",[self.state numItems]);
     UIApplicationState applicationState = [[UIApplication sharedApplication] applicationState];
     if(applicationState == UIApplicationStateBackground
        || applicationState == UIApplicationStateInactive){
@@ -405,15 +404,6 @@
         item = contact.bodyB.node;
     }
     if(player && platform){
-        /*CGPoint playerPosition = CGPointMake(player.position.x-(player.frame.size.width*.175*player.xScale),
-                                             player.frame.origin.y);
-        CGFloat centerOfPlayer = playerPosition.x;
-        CGFloat bottomOfPlayer = playerPosition.y;
-        
-        CGPoint platformPosition = platform.position;
-        CGFloat leftOfPlatform = platformPosition.x-platform.frame.size.width/2;
-        CGFloat rightOfPlatform = platformPosition.x+platform.frame.size.width/2;*/
-        //printf("%f %f %f n\n\n\n",bottomOfPlayer,centerOfPlayer,leftOfPlatform);
         
     }else if(player && level){
         

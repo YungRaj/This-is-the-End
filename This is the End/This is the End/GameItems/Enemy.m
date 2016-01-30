@@ -62,7 +62,7 @@
         SKAction *deathSequence = [SKAction sequence:@[deathAnimation,completion]];
         [self runAction:deathSequence];
         // add a key if necessary to keep track of deaths of enemies 
-    }
+    } 
 }
 
 @end

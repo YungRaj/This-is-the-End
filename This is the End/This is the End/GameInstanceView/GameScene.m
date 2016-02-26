@@ -138,7 +138,7 @@
         Enemy *enemy;
         switch(numPlatforms%8){
             case 3:
-                enemy = [[Enemy alloc] initWithName:@"taserBot" size:CGSizeMake(self.size.width/6,
+                enemy = [[Enemy alloc] initWithName:@"taserBot" size:CGSizeMake(self.size.width/5,
                                                                                 self.size.height/5)
                                                                 type:EnemyAlien];
                 enemy.canMove = YES;

@@ -66,9 +66,9 @@ BOOL checkAllCollisions(SKNode *node){
 }
 
 BOOL checkCollision(SKNode *a, SKNode *b){
-    CGFloat aTopLeftX = a.position.x;
+    CGFloat aTopLeftX = a.position.x-a.frame.size.width*.15;
     CGFloat aTopLeftY = a.position.y+a.frame.size.height/2;
-    CGFloat aBottomRightX = a.position.x;
+    CGFloat aBottomRightX = a.position.x+a.frame.size.width*.15;
     CGFloat aBottomRightY = a.position.y-a.frame.size.height/2;
     CGFloat bTopLeftX = b.position.x-b.frame.size.width/2;
     CGFloat bTopLeftY = b.position.y+b.frame.size.height/2;
@@ -93,10 +93,12 @@ BOOL checkCollision(SKNode *a, SKNode *b){
              aBottomRightY>=bTopLeftY || bBottomRightY>=aTopLeftY);
 }*/
 
+// not needed anymore 
+
 NSInteger xScaleNegativeDirectionFromIOSVersion(){
     NSOperatingSystemVersion iOS_9 = (NSOperatingSystemVersion){ 9, 0 };
     if([[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:iOS_9]){
-        return -1;
+        return 1;
     }
     return -1;
 }

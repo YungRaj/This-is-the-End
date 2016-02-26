@@ -273,11 +273,11 @@
     
     CGSize size = self.frame.size;
     
-    self.player.size = CGSizeMake(size.width/6,
+    self.player.size = CGSizeMake(size.width/4,
                                   size.height/4);
     
     self.player.position = [self.level
-                            convertPoint:CGPointMake(self.player.size.width*.175,.05)
+                            convertPoint:CGPointMake(0,.05)
                                 fromNode:self];
     
     [self.level addChild:self.player];
@@ -317,8 +317,8 @@
     [SKPhysicsBody
      bodyWithRectangleOfSize:CGSizeMake(self.player.size.width*.3,
                                         self.player.size.height)
-     center:[self.level convertPoint:CGPointMake(self.player.position.x-self.player.size.width*.175,
-                                           self.player.position.y)
+     center:[self.level convertPoint:CGPointMake(self.player.position.x,
+                                                 self.player.position.y)
                         toNode:self.player]];
     
     self.player.physicsBody.categoryBitMask = playerMask;
@@ -344,7 +344,7 @@
 
 -(void)centerOnNode:(SKNode *) node{
     CGPoint cameraPositionInScene =
-                     [node.scene convertPoint:CGPointMake(node.position.x-(node.xScale*node.frame.size.width*.175),
+                     [node.scene convertPoint:CGPointMake(node.position.x,
                                                           node.position.y)
                                      fromNode:node.parent];
     node.parent.position = CGPointMake(node.parent.position.x-cameraPositionInScene.x,

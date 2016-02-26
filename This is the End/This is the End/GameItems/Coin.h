@@ -10,9 +10,9 @@
 #import "CollectableItem.h"
 
 static NSString *coinStoreItems[] = {@"CoinOneHundred",
-                                      @"CoinOneThousand",
-                                      @"CoinTenThousand",
-                                      @"CoinInfinity"};
+                                     @"CoinOneThousand",
+                                     @"CoinTenThousand",
+                                     @"CoinInfinity"};
 
 static uint32_t coinStoreQuantity[] = {100,
                                        1000,

@@ -126,7 +126,8 @@
                              sizeOfDigit:CGSizeMake(self.size.height,
                                                     self.size.height)
                           numberOfDigits:((size.width-self.title.size.width)/self.size.height)
-          shouldFillEmptyDigitsWithZeros:[[self class] shouldFillEmptyDigitsWithZerosFromType:self.type]];
+          shouldFillEmptyDigitsWithZeros:[[self class]
+  shouldFillEmptyDigitsWithZerosFromType:self.type]];
     [self addChild:self.title];
     [self addChild:self.value];
     

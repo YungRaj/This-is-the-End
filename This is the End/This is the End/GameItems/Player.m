@@ -126,8 +126,6 @@ static NSString* const achievementsKey = @"achievements";
     if(isRightSelected && !isLeftSelected){
         if(currentXScale!=1.0){
             self.xScale = 1.0;
-            self.position = CGPointMake(self.position.x+self.size.width*.35,
-                                        self.position.y);
         }else{
             CGVector velocity = CGVectorMake(self.size.width*(18*FRAME_RATE/667),playerVelocityY);
             if(checkAllCollisions(self)){
@@ -139,8 +137,6 @@ static NSString* const achievementsKey = @"achievements";
     }else if(isLeftSelected && !isRightSelected){
         if(currentXScale!=-1.0){
             self.xScale = -1.0;
-            self.position = CGPointMake(self.position.x+(xScaleNegativeDirectionFromIOSVersion()*self.size.width*.35)
-                                        ,self.position.y);
         }else{
             CGVector velocity =
                 CGVectorMake(self.size.width*(18*FRAME_RATE/667)*xScaleNegativeDirectionFromIOSVersion(),
@@ -356,10 +352,10 @@ static NSString* const achievementsKey = @"achievements";
         
         CGPoint shootPoint;
         if(xScaleNegativeDirectionFromIOSVersion()==1){
-            shootPoint = CGPointMake(self.position.x+self.size.width*.175,
+            shootPoint = CGPointMake(self.position.x+self.size.width*.35,
                                      self.position.y);
         }else{
-            shootPoint = CGPointMake(self.position.x+(self.xScale*self.size.width*.175),
+            shootPoint = CGPointMake(self.position.x+(self.xScale*self.size.width*.35),
                                          self.position.y);
         }
         
@@ -400,10 +396,10 @@ static NSString* const achievementsKey = @"achievements";
         
         CGPoint shootPoint;
         if(xScaleNegativeDirectionFromIOSVersion()==1){
-            shootPoint = CGPointMake(self.position.x+self.size.width*.175,
+            shootPoint = CGPointMake(self.position.x+self.size.width*.35,
                                      self.position.y);
         }else{
-            shootPoint = CGPointMake(self.position.x+(self.xScale*self.size.width*.175),
+            shootPoint = CGPointMake(self.position.x+(self.xScale*self.size.width*.35),
                                      self.position.y);
         }
         

@@ -273,7 +273,7 @@
     
     CGSize size = self.frame.size;
     
-    self.player.size = CGSizeMake(size.width/4,
+    self.player.size = CGSizeMake(size.width/4.5,
                                   size.height/4);
     
     self.player.position = [self.level

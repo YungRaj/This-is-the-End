@@ -434,8 +434,7 @@
             [((Bullet*)bullet).delegate removeBullet:(Bullet*)bullet];
         }
     }else if(player && block){
-        CGPoint playerPosition = CGPointMake(player.position.x-(player.frame.size.width*.175*player.xScale),
-                                             player.frame.origin.y);
+        CGPoint playerPosition = player.position;
         CGFloat centerOfPlayer = playerPosition.x;
         CGFloat bottomOfPlayer = playerPosition.y;
         

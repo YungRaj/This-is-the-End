@@ -96,10 +96,6 @@ BOOL checkCollision(SKNode *a, SKNode *b){
 // not needed anymore 
 
 NSInteger xScaleNegativeDirectionFromIOSVersion(){
-    NSOperatingSystemVersion iOS_9 = (NSOperatingSystemVersion){ 9, 0 };
-    if([[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:iOS_9]){
-        return 1;
-    }
     return -1;
 }
 

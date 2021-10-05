@@ -8,7 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-
 @class GameInfoPanel;
 @class SKButton;
 @class GameData;

@@ -8,7 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-typedef enum{
+typedef enum
+{
     GameInfoPanelTypeScore,
     GameInfoPanelTypeWorld,
     GameInfoPanelTypeCoins,
@@ -26,6 +27,7 @@ typedef enum{
                    position:(CGPoint)position
                        size:(CGSize)size
                       state:(GameData*)state;
+
 +(NSString*)getNotificationNameFromType:(GameInfoPanelType)type;
 
 

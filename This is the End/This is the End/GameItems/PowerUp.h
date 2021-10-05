@@ -23,9 +23,8 @@
 
 #define numberOfPowerUps 5
 
-
-
-typedef enum{
+typedef enum
+{
     Health,
     Attack,
     Defense,

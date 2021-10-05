@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <GameKit/GameKit.h>
 
-typedef enum {
+typedef enum
+{
     GameAchievementOneHundredCoins,
     GameAchievementOneThousandCoins,
     GameAchievementTenThousandCoins,

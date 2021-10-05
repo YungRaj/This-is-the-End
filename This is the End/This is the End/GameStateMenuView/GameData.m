@@ -9,7 +9,8 @@
 #import "GameData.h"
 #import "GameAPI.h"
 
-@interface GameData (){
+@interface GameData ()
+{
     
 }
 
@@ -31,24 +32,32 @@ static NSString* const shotsFiredKey = @"shotsFired";
 static NSString *const powerUpsKey = @"powerUps";
 static NSString* const badgesKey = @"badges";
 
--(NSMutableArray*)powerUps{
-    if(!_powerUps){
+-(NSMutableArray*)powerUps
+{
+    if(!_powerUps)
+    {
         _powerUps = [[NSMutableArray alloc] init];
     }
+    
     return _powerUps;
 }
 
--(NSMutableArray*)badges{
-    if(!_badges){
+-(NSMutableArray*)badges
+{
+    if(!_badges)
+    {
         _badges = [[NSMutableArray alloc] init];
     }
+    
     return _badges;
 }
 
 -(instancetype)initWithCoder:(NSCoder*)decoder
 {
     self = [super init];
-    if (self) {
+    
+    if (self)
+    {
         _worlds = [decoder decodeInt32ForKey:worldsKey];
         _levels = [decoder decodeInt32ForKey:levelsKey];
         _health = [decoder decodeInt32ForKey:healthKey];
@@ -59,6 +68,7 @@ static NSString* const badgesKey = @"badges";
         _powerUps = [decoder decodeObjectForKey:powerUpsKey];
         _badges = [decoder decodeObjectForKey:badgesKey];
     }
+    
     return self;
 }
 
@@ -77,20 +87,29 @@ static NSString* const badgesKey = @"badges";
 
 +(instancetype)loadInstanceWithState:(int32_t)state
 {
-    if(state<-1 || state>4)
+    if(state < -1 || state > 4)
         return nil;
+    
     NSData *decodedData = [NSData dataWithContentsOfFile:[self filePathForState:state]];
+    
     GameData *gameData;
-    if (decodedData) {
+    
+    if (decodedData)
+    {
         gameData = [NSKeyedUnarchiver unarchiveObjectWithData:decodedData];
         gameData.filePathExists = YES;
         gameData.state = state;
+        
         return gameData;
     }
+    
     gameData = [[self alloc] init];
+    
     gameData.state = state;
     gameData.filePathExists = NO;
+    
     [gameData reset];
+    
     return gameData;
 }
 
@@ -100,42 +119,55 @@ static NSString* const badgesKey = @"badges";
          stringByAppendingPathComponent:[NSString stringWithFormat:@"GameData%d",state]];
 }
 
-+(BOOL)filePathExistsForState:(int32_t)state{
++(BOOL)filePathExistsForState:(int32_t)state
+{
     return [NSData dataWithContentsOfFile:[self filePathForState:state]]!=nil;
 }
 
 
--(void)setWorlds:(int32_t)worlds{
+-(void)setWorlds:(int32_t)worlds
+{
     _worlds = worlds;
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:kGameNotificationWorld object:[NSNumber numberWithInteger:_worlds]];
 }
 
--(void)setScore:(int32_t)score{
+-(void)setScore:(int32_t)score
+{
     _score = score;
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:kGameNotificationScore object:[NSNumber numberWithInteger:_score]];
 }
 
--(void)setLives:(int32_t)lives{
+-(void)setLives:(int32_t)lives
+{
     _lives = lives;
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:kGameNotificationLives object:[NSNumber numberWithInteger:_lives]];
 }
 
--(void)setCoins:(int32_t)coins{
+-(void)setCoins:(int32_t)coins
+{
     _coins = coins;
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:kGameNotificationCoins object:[NSNumber numberWithInteger:_coins]];
 }
 
 
--(void)addPowerUp:(PowerUp*)powerUp{
+-(void)addPowerUp:(PowerUp*)powerUp
+{
     [self.powerUps addObject:powerUp];
 }
 
--(void)addBadge:(Badge*)badge{
+-(void)addBadge:(Badge*)badge
+{
     [self.badges addObject:badge];
 }
 
--(void)removePowerUp:(PowerUp*)powerUp{
+-(void)removePowerUp:(PowerUp*)powerUp
+{
     [self.powerUps removeObject:powerUp];
+    
     [powerUp removeFromParent];
 }
 

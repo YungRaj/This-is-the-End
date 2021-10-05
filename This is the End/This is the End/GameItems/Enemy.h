@@ -9,13 +9,15 @@
 #import <SpriteKit/SpriteKit.h>
 #import "MovingObject.h"
 
-typedef enum{
+typedef enum
+{
     EnemyAlien,
     EnemyRobot,
     EnemyCyborg,
 } EnemyType;
 
-typedef enum{
+typedef enum
+{
     EnemyStateIdle,
     EnemyStateDefend,
     EnemyStateAttack,

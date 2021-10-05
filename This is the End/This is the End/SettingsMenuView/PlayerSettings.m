@@ -8,7 +8,8 @@
 
 #import "PlayerSettings.h"
 
-@interface PlayerSettings () {
+@interface PlayerSettings ()
+{
     
 }
 
@@ -16,58 +17,81 @@
 
 @implementation PlayerSettings
 
--(instancetype)init{
+-(instancetype)init
+{
     self = [super init];
-    if(self){
+    
+    if(self)
+    {
         
     }
     return self;
 }
 
--(instancetype)initWithCoder:(NSCoder*)decoder{
+-(instancetype)initWithCoder:(NSCoder*)decoder
+{
     self = [super init];
-    if(self){
+    
+    if(self)
+    {
         
     }
+    
     return self;
 }
 
--(void)encodeWithCoder:(NSCoder*)encoder{
+-(void)encodeWithCoder:(NSCoder*)encoder
+{
     
 }
 
-+(instancetype)loadPlayerSettings{
++(instancetype)loadPlayerSettings
+{
     NSData *decodedData = [NSData dataWithContentsOfFile:[self filePathForPlayerSettings]];
+    
     PlayerSettings *playerSettings;
-    if(decodedData){
+    
+    if(decodedData)
+    {
         playerSettings = [NSKeyedUnarchiver unarchiveObjectWithData:decodedData];
         return playerSettings;
     }
+    
     playerSettings = [[self alloc] init];
+    
     return playerSettings;
 }
 
-+(NSString*)filePathForPlayerSettings{
++(NSString*)filePathForPlayerSettings
+{
     return [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]
             stringByAppendingPathComponent:@"PlayerSettings"];
 }
 
--(void)savePlayerSettings{
+-(void)savePlayerSettings
+{
     NSData *encodedData = [NSKeyedArchiver archivedDataWithRootObject:self];
+    
     [encodedData writeToFile:[[self class] filePathForPlayerSettings] atomically:YES];
     
 }
 
--(void)removePlayerSettings{
+-(void)removePlayerSettings
+{
     NSFileManager *fileManager = [NSFileManager defaultManager];
+    
     NSError *error;
+   
     BOOL success = [fileManager removeItemAtPath:[[self class] filePathForPlayerSettings] error:&error];
-    if(success){
+    
+    if(success)
+    {
         [self resetSettings];
     }
 }
 
--(void)resetSettings{
+-(void)resetSettings
+{
     
 }
 

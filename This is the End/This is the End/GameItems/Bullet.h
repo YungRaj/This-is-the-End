@@ -13,7 +13,6 @@
 
 @property (weak,nonatomic) id<BulletDelegate> delegate;
 
-
 -(instancetype)initWithName:(NSString*)name size:(CGSize)size;
 -(void)shootAtPoint:(CGPoint)point;
 -(void)explode;

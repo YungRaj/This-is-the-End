@@ -1,4 +1,13 @@
 # This is the End
-This is a SpriteKit game that is like Mario. It contains a custom character with multiple guns and many alien, robot and other enemies. There’s store included in the app, but it is not completed yet and fully integrated with Apple’s internet services (GameKit, iAP, etc). The Settings and Help menu have not been completed yet and no, this app hasn’t been implemented with Auto-Layout but it works on all iPhone displays (will have to refactor images and code for iPad support). AI is not complete yet but all the controls, platforms, physics and collision detection have been fully implemented. Art has been completed by Parker Graham (twitter: @yungbasedparker). 
 
-Completion rate: 70%
+This is a 2D side scrolling game designed by Parker Graham and developed by Ilhan Raja. It was inspired by Super Mario World, the game for the Super Nintendo Entertainment System. It contains a custom main character with guns that seeks to fight other alien, robot, etc enemies.
+
+Completion Rate = 70%
+
+<div align="center"> <img src="https://github.com/YungRaj/This-is-the-End/raw/master/main_title.png" /></div>
+
+<div align="center"> <img src="https://github.com/YungRaj/This-is-the-End/raw/master/select_game_menu.png" /></div>
+
+<div align="center"> <img src="https://github.com/YungRaj/This-is-the-End/raw/master/loading_game.png" /></div>
+
+<div align="center"> <img src="https://github.com/YungRaj/This-is-the-End/raw/master/game_play.png" /></div>

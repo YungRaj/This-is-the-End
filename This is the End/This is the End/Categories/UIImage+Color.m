@@ -10,9 +10,9 @@
 
 @implementation UIImage (Color)
 
-+(UIImage *)imageNamed:(NSString *)name withColor:(UIColor *)color{
++(UIImage *)imageNamed:(NSString *)name withColor:(UIColor *)color
+{
     // load the image
-    
     UIImage *img = [UIImage imageNamed:name];
     
     // begin a new image context, to draw our colored image onto
@@ -45,4 +45,5 @@
     //return the color-burned image
     return coloredImg;
 }
+
 @end

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum {
+typedef enum
+{
     InterruptedGamePaused,
     InterruptedGameOver,
     InterruptedGameRetrievedItem,

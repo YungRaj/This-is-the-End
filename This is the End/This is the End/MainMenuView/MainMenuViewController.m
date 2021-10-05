@@ -17,7 +17,8 @@
 #import "UIImage+Color.h"
 
 
-@interface MainMenuViewController () {
+@interface MainMenuViewController ()
+{
     
 }
 
@@ -36,15 +37,19 @@
 
 @dynamic view;
 
--(void)loadView{
+-(void)loadView
+{
     self.view = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.view.userInteractionEnabled = YES;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pauseUpdateFrame:) name:kMainMenuPauseFrame object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playUpdateFrame:) name:kMainMenuResumeFrame object:nil];
+    
     [super viewDidLoad];
+    
     [self setUptapGesture];
     [self setUpPlayer];
     [self setUpView];
@@ -54,39 +59,51 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
--(void)viewDidAppear:(BOOL)animated{
+-(void)viewDidAppear:(BOOL)animated
+{
     [super viewDidAppear:animated];
-    if(!self.updateFrame){
+    
+    if(!self.updateFrame)
+    {
         self.updateFrame = [NSTimer scheduledTimerWithTimeInterval:2.5f/11 target:self selector:@selector(updateFrame:) userInfo:nil repeats:YES];
     }
-    
 }
 
 
--(void)viewWillDisappear:(BOOL)animated{
+-(void)viewWillDisappear:(BOOL)animated
+{
     [super viewWillDisappear:animated];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 
--(void)authenticateLocalPlayer{
+-(void)authenticateLocalPlayer
+{
     GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+    
     TITEViewController *rootViewController;
-    if([self.parentViewController isKindOfClass:[TITEViewController class]]){
+    
+    if([self.parentViewController isKindOfClass:[TITEViewController class]])
+    {
         rootViewController  = (TITEViewController*)self.parentViewController;
     }
+    
     __weak typeof(self) weakSelf = self;
-    localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
-        if (viewController != nil) {
+    
+    localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error)
+    {
+        if (viewController != nil)
+        {
             [weakSelf presentViewController:viewController animated:YES completion:nil];
         }
         else{
-            if ([GKLocalPlayer localPlayer].authenticated) {
-                
+            if ([GKLocalPlayer localPlayer].authenticated)
+            {
                 rootViewController.gameCenterEnabled = YES;
                 // Get the default leaderboard identifier.
                 [[GKLocalPlayer localPlayer] loadDefaultLeaderboardIdentifierWithCompletionHandler:^(NSString *leaderboardIdentifier, NSError *error) {
@@ -98,9 +115,8 @@
                      //   _leaderboardIdentifier = leaderboardIdentifier;
                     }
                 }];
-            }
-            
-            else{
+            } else
+            {
                 rootViewController.gameCenterEnabled = NO;
             }
         }
@@ -109,45 +125,53 @@
 
 static int frameCount;
 
--(UIImage*)imageWithFrameCount{
-    if(frameCount>=11)frameCount=0;
+-(UIImage*)imageWithFrameCount
+{
+    if(frameCount >= 11) frameCount = 0;
+    
     return [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:[NSString stringWithFormat:@"mm%d",++frameCount] ofType:@"png"]];
 }
 
--(void)updateFrame:(NSTimer*)timer{
+-(void)updateFrame:(NSTimer*)timer
+{
     self.view.image = [self imageWithFrameCount];
 }
 
--(void)setUpView{
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+-(void)setUpView
+{
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
         [self setUpPadView];
-    }else{
+    } else
+    {
         [self setUpPhoneView];
     }
 }
 
--(void)setUpPadView{
+-(void)setUpPadView
+{
     
 }
 
--(void)setUpPhoneView{
+-(void)setUpPhoneView
+{
     self.view.image = [self imageWithFrameCount];
     self.updateFrame = [NSTimer scheduledTimerWithTimeInterval:2.5f/11 target:self selector:@selector(updateFrame:) userInfo:nil repeats:YES];
 
     UIImage *playButton = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"playbutton" ofType:@"png"]];
     UIImage *optionsButton = [UIImage imageNamed:@"button.png"];
+    
     id playText = (id)[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"play" ofType:@"png"]].CGImage;
     id helpText = (id)[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"help" ofType:@"png"]].CGImage;
     id settingsText = (id)[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"settings" ofType:@"png"]].CGImage;
     
-    
     self.playButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.helpButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
     self.playText = [CALayer layer];
     self.helpText = [CALayer layer];
     self.settingsText = [CALayer layer];
-
 
     [self.playButton setImage:playButton forState:
                     UIControlStateNormal];
@@ -155,11 +179,10 @@ static int frameCount;
                     UIControlStateNormal];
     [self.settingsButton setImage:optionsButton forState:
                     UIControlStateNormal];
+    
     self.playText.contents = playText;
     self.helpText.contents = helpText;
     self.settingsText.contents = settingsText;
-    
-    
     
     CGRect screen = [[UIScreen mainScreen] bounds];
     
@@ -214,108 +237,150 @@ static int frameCount;
     [self.view addSubview:self.playButton];
     [self.view addSubview:self.helpButton];
     [self.view addSubview:self.settingsButton];
+    
     [[self.playButton layer] addSublayer:self.playText];
     [[self.helpButton layer] addSublayer:self.helpText];
     [[self.settingsButton layer] addSublayer:self.settingsText];
 }
 
--(void)setUptapGesture{
+-(void)setUptapGesture
+{
     self.tapGesture =
     [[UITapGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(tapView:)];
+    
     [self.view addGestureRecognizer:self.tapGesture];
+    
     self.tapGesture.cancelsTouchesInView = NO;
 
 }
 
--(void)setUpPlayer{
+-(void)setUpPlayer
+{
     [Player loadPlayerInstance];
 }
 
--(void)dealloc{
+-(void)dealloc
+{
     [self cleanUpMainMenuItems];
 }
 
--(void)cleanUpMainMenuItems{
+-(void)cleanUpMainMenuItems
+{
     [self invalidateUpdateFrameTimer];
+    
     [self.playButton removeFromSuperview];
     [self.settingsButton removeFromSuperview];
     [self.helpButton removeFromSuperview];
     [self.playText removeFromSuperlayer];
     [self.helpText removeFromSuperlayer];
     [self.settingsText removeFromSuperlayer];
+    
     self.playButton = nil;
     self.helpButton = nil;
     self.settingsButton = nil;
     self.playText = nil;
     self.helpText = nil;
     self.settingsText = nil;
-    
 }
 
--(void)pauseUpdateFrame:(NSNotification*)notification{
-    if([notification.name isEqualToString:kMainMenuPauseFrame]){
+-(void)pauseUpdateFrame:(NSNotification*)notification
+{
+    if([notification.name isEqualToString:kMainMenuPauseFrame])
+    {
         [self invalidateUpdateFrameTimer];
     }
 }
 
--(void)playUpdateFrame:(NSNotification*)notification{
-    if([notification.name isEqualToString:kMainMenuResumeFrame]){
+-(void)playUpdateFrame:(NSNotification*)notification
+{
+    if([notification.name isEqualToString:kMainMenuResumeFrame])
+    {
         self.updateFrame = [NSTimer scheduledTimerWithTimeInterval:2.5/11 target:self selector:@selector(updateFrame:) userInfo:nil repeats:YES];
     }
 }
 
--(void)invalidateUpdateFrameTimer{
+-(void)invalidateUpdateFrameTimer
+{
     [self.updateFrame invalidate];
+    
     self.updateFrame = nil;
 }
 
--(void)tapView:(UITapGestureRecognizer *)recognizer{
+-(void)tapView:(UITapGestureRecognizer *)recognizer
+{
     CGPoint point = [recognizer locationInView:self.view];
-    if(CGRectContainsPoint(self.playButton.frame, point)){
+    
+    if(CGRectContainsPoint(self.playButton.frame, point))
+    {
         [self invalidateUpdateFrameTimer];
+        
         GameStateMenuVC *gameStateMenuVC = [[GameStateMenuVC alloc] init];
+        
         UIViewController *parentVC = self.parentViewController;
+        
         [self.view removeFromSuperview];
         [self removeFromParentViewController];
+        
         [parentVC addChildViewController:gameStateMenuVC];
         [parentVC.view addSubview:gameStateMenuVC.view];
+        
         [gameStateMenuVC didMoveToParentViewController:parentVC];
+        
         CATransition *transition = [CATransition animation];
+        
         transition.duration = 0.5;
         transition.type = kCATransitionPush;
         transition.subtype = kCATransitionFromRight;
         [parentVC.view.layer addAnimation:transition forKey:nil];
         
-    }else if(CGRectContainsPoint(self.helpButton.frame,point)){
+    } else if(CGRectContainsPoint(self.helpButton.frame,point))
+    {
         [self invalidateUpdateFrameTimer];
+        
         HelpMenuVC *helpMenuVC = [[HelpMenuVC alloc] init];
+        
         UIViewController *parentVC = self.parentViewController;
+        
         [self.view removeFromSuperview];
+        
         [parentVC addChildViewController:helpMenuVC];
         [parentVC.view addSubview:helpMenuVC.view];
+        
         [helpMenuVC didMoveToParentViewController:parentVC];
+        
         CATransition *transition = [CATransition animation];
+        
         transition.duration = 0.5;
         transition.type = kCATransitionPush;
         transition.subtype = kCATransitionFromTop;
+        
         [parentVC.view.layer addAnimation:transition forKey:nil];
-    }else if(CGRectContainsPoint(self.settingsButton.frame, point)){
+        
+    }else if(CGRectContainsPoint(self.settingsButton.frame, point))
+    {
         [self invalidateUpdateFrameTimer];
+        
         SettingsMenuVC *settingsMenuVC = [[SettingsMenuVC alloc] init];
+        
         UIViewController *parentVC = self.parentViewController;
+        
         [self.view removeFromSuperview];
+        
         [parentVC addChildViewController:settingsMenuVC];
         [parentVC.view addSubview:settingsMenuVC.view];
+        
         [settingsMenuVC didMoveToParentViewController:parentVC];
+        
         CATransition *transition = [CATransition animation];
+        
         transition.duration = 0.5;
         transition.type = kCATransitionPush;
         transition.subtype = kCATransitionFromTop;
+        
         [parentVC.view.layer addAnimation:transition forKey:nil];
     }
 }
-
 
 @end
 

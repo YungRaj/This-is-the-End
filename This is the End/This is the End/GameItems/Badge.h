@@ -12,7 +12,8 @@
 
 #define numberOfBadges 15
 
-typedef enum {
+typedef enum
+{
     AttackBadge,
     AUpDDownBadge,
     DUpADownBadge,

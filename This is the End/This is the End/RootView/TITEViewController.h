@@ -15,7 +15,4 @@
 @property (assign,nonatomic) BOOL gameCenterEnabled;
 @property (strong,nonatomic) GameData *gameDataSelected;
 
-
-
-
 @end

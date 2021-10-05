@@ -13,7 +13,8 @@
 #import "MovingObject.h"
 #import "BulletDelegate.h"
 
-typedef enum{
+typedef enum
+{
     PlayerStateStanding,
     PlayerStateIdle,
     PlayerStateWalking,

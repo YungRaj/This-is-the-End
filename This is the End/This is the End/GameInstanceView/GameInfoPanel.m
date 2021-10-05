@@ -13,7 +13,8 @@
 
 
 
-@interface GameInfoPanel () {
+@interface GameInfoPanel ()
+{
     
 }
 
@@ -30,88 +31,124 @@
 -(instancetype)initWithType:(GameInfoPanelType)type
                    position:(CGPoint)position
                        size:(CGSize)size
-                      state:(GameData*)state{
+                      state:(GameData*)state
+{
     self = [super init];
     
-    if(self){
+    if(self)
+    {
         self.size = size;
         self.position = position;
+        
         _type = type;
         _state = state;
+        
         [self setUpInfoPanel];
     }
     
     return self;
 }
 
--(NSInteger)getValueFromStateWithType:(GameInfoPanelType)type{
-    if(type==GameInfoPanelTypeCoins){
+-(NSInteger)getValueFromStateWithType:(GameInfoPanelType)type
+{
+    if(type==GameInfoPanelTypeCoins)
+    {
         return self.state.coins;
-    }else if(type==GameInfoPanelTypeLives){
+    } else if(type==GameInfoPanelTypeLives)
+    {
         return self.state.lives;
-    }else if(type==GameInfoPanelTypeScore){
+    } else if(type==GameInfoPanelTypeScore)
+    {
         return self.state.score;
-    }else if(type==GameInfoPanelTypeWorld){
+    } else if(type==GameInfoPanelTypeWorld)
+    {
         return self.state.worlds;
-    }else if(type==GameInfoPanelTypeLevel) {
+    } else if(type==GameInfoPanelTypeLevel)
+    {
         return self.state.levels;
-    }else if(type==GameInfoPanelTypeHealth){
+    } else if(type==GameInfoPanelTypeHealth)
+    {
         return self.state.health;
     }
+    
     return 0;
 }
 
-+(NSString*)getNotificationNameFromType:(GameInfoPanelType)type{
-    if(type==GameInfoPanelTypeCoins){
++(NSString*)getNotificationNameFromType:(GameInfoPanelType)type
+{
+    if(type==GameInfoPanelTypeCoins)
+    {
         return kGameNotificationCoins;
-    }else if(type==GameInfoPanelTypeLives){
+    } else if(type==GameInfoPanelTypeLives)
+    {
         return kGameNotificationLives;
-    }else if(type==GameInfoPanelTypeScore){
+    } else if(type==GameInfoPanelTypeScore)
+    {
         return kGameNotificationScore;
-    }else if(type==GameInfoPanelTypeWorld){
+    } else if(type==GameInfoPanelTypeWorld)
+    {
         return kGameNotificationWorld;
-    }else if(type==GameInfoPanelTypeLevel){
+    } else if(type==GameInfoPanelTypeLevel)
+    {
         return kGameNotificationLevel;
-    }else if(type==GameInfoPanelTypeHealth){
+    } else if(type==GameInfoPanelTypeHealth)
+    {
         return kGameNotificationHealth;
     }
+    
     return nil;
 }
 
-+(BOOL)shouldFillEmptyDigitsWithZerosFromType:(GameInfoPanelType)type{
-    if(type==GameInfoPanelTypeCoins){
++(BOOL)shouldFillEmptyDigitsWithZerosFromType:(GameInfoPanelType)type
+{
+    if(type==GameInfoPanelTypeCoins)
+    {
         return false;
-    }else if(type==GameInfoPanelTypeLives){
+    } else if(type==GameInfoPanelTypeLives)
+    {
         return false;
-    }else if(type==GameInfoPanelTypeScore){
+    } else if(type==GameInfoPanelTypeScore)
+    {
         return true;
-    }else if(type==GameInfoPanelTypeWorld){
+    } else if(type==GameInfoPanelTypeWorld)
+    {
         return false;
-    }else if(type==GameInfoPanelTypeLevel){
+    } else if(type==GameInfoPanelTypeLevel)
+    {
         return false;
-    }else if(type==GameInfoPanelTypeHealth){
+    } else if(type==GameInfoPanelTypeHealth)
+    {
         return false;
     }
+    
     return false;
 }
 
--(void)setUpInfoPanel{
+-(void)setUpInfoPanel
+{
     self.title = [SKSpriteNode node];
     
     CGSize size = self.size;
-    if(self.type==GameInfoPanelTypeCoins){
+    
+    if(self.type==GameInfoPanelTypeCoins)
+    {
         self.title.texture = [SKTexture textureWithImageNamed:@"coinsw.png"];
-    }else if(self.type==GameInfoPanelTypeLives){
+    } else if(self.type==GameInfoPanelTypeLives)
+    {
         self.title.texture = [SKTexture textureWithImageNamed:@"livesw.png"];
-    }else if(self.type==GameInfoPanelTypeScore){
+    } else if(self.type==GameInfoPanelTypeScore)
+    {
         self.title.texture = [SKTexture textureWithImageNamed:@"scorew.png"];
-    }else if(self.type==GameInfoPanelTypeWorld){
+    } else if(self.type==GameInfoPanelTypeWorld)
+    {
         self.title.texture = [SKTexture textureWithImageNamed:@"worldw.png"];
-    }else if(self.type==GameInfoPanelTypeLevel){
+    } else if(self.type==GameInfoPanelTypeLevel)
+    {
         self.title.texture = [SKTexture textureWithImageNamed:@"levelw.png"];
-    }else if(self.type==GameInfoPanelTypeHealth){
+    } else if(self.type==GameInfoPanelTypeHealth){
         self.title.texture = [SKTexture textureWithImageNamed:@"healthw.png"];
     }
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateValue:)
                                                  name:[[self class] getNotificationNameFromType:self.type]
@@ -133,14 +170,17 @@
     
 }
 
--(void)updateValue:(NSNotification*)notification{
+-(void)updateValue:(NSNotification*)notification
+{
     NSNumber *number = [notification object];
-    if([notification.name isEqualToString:[[self class] getNotificationNameFromType:self.type]]){
+    if([notification.name isEqualToString:[[self class] getNotificationNameFromType:self.type]])
+    {
         self.value.number = [number integerValue];
     }
 }
 
--(void)dealloc{
+-(void)dealloc
+{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:[[self class] getNotificationNameFromType:self.type] object:nil];
 }
 

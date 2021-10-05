@@ -22,12 +22,9 @@
 @property (strong,nonatomic) CALayer *playText;
 
 
-
 -(instancetype)initWithFrame:(CGRect)frame gameStateData:(GameData*)data;
 -(void)setUpSubViews;
 -(void)cleanUpView;
-
-
 
 
 @end

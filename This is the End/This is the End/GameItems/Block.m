@@ -17,15 +17,21 @@ NSString *kBlockActionActivate = @"activate";
 
 @implementation Block
 
--(void)activateBlock{
-    if(!self.isActivated){
+-(void)activateBlock
+{
+    if(!self.isActivated)
+    {
         self.isActivated = YES;
-        if(self.type==BlockTypeMystery){
+        
+        if(self.type==BlockTypeMystery)
+        {
             SKTexture *texture1 = [SKTexture textureWithImageNamed:@"mysteryblock1"];
             SKTexture *texture2 = [SKTexture textureWithImageNamed:@"mysteryblock2"];
             SKTexture *texture3 = [SKTexture textureWithImageNamed:@"mysteryblock3"];
+            
             SKAction *activateBlock = [SKAction animateWithTextures:@[texture1,texture2,texture3]
                                                        timePerFrame:.1];
+           
             [self runAction:activateBlock withKey:kBlockActionActivate];
             
             CGPoint currentPosition = self.position;
@@ -35,26 +41,38 @@ NSString *kBlockActionActivate = @"activate";
                                                currentPosition.y+self.size.width/2+itemSize.height/2);
             
             SKSpriteNode<CollectableItem> *item = randomItem();
+           
             item.position = itemPosition;
             item.size = itemSize;
-            if([item isKindOfClass:[Badge class]]){
+            
+            if([item isKindOfClass:[Badge class]])
+            {
                 Badge *badge = (Badge*)item;
+                
                 NSString *name = badges[badge.type];
+                
                 badge.physicsBody = [SKPhysicsBody
                                        bodyWithTexture:[SKTexture textureWithImageNamed:name]
                                        size:badge.size];
-            }else if([item isKindOfClass:[PowerUp class]]){
+            } else if([item isKindOfClass:[PowerUp class]])
+            {
                 PowerUp *powerUp = (PowerUp*)item;
+                
                 NSString *name = [NSString stringWithFormat:@"%@1",powerUps[powerUp.type]];
+                
                 powerUp.physicsBody = [SKPhysicsBody
                                          bodyWithTexture:[SKTexture textureWithImageNamed:name]
                                                     size:powerUp.size];
-            }else if([item isKindOfClass:[Coin class]]){
+            } else if([item isKindOfClass:[Coin class]])
+            {
                 Coin *coin = (Coin*)item;
+                
                 coin.physicsBody = [SKPhysicsBody bodyWithTexture:[SKTexture textureWithImageNamed:@"Coin1"]
                                                              size:coin.size];
             }
-            switch(arc4random()%2){
+            
+            switch(arc4random() % 2)
+            {
                 case 0:
                     item.physicsBody.velocity = CGVectorMake(item.size.width*2, 0);
                     break;
@@ -62,6 +80,7 @@ NSString *kBlockActionActivate = @"activate";
                     item.physicsBody.velocity = CGVectorMake(-item.size.width*2, 0);
                     break;
             }
+            
             item.physicsBody.dynamic = YES;
             item.physicsBody.categoryBitMask = itemMask;
             item.physicsBody.contactTestBitMask = 0xFFFFFFFF ^ itemMask;
@@ -69,11 +88,7 @@ NSString *kBlockActionActivate = @"activate";
             item.physicsBody.friction = 0;
             
             [((GameScene*)self.scene).level addChild:item];
-            
-            
         }
-        
-        
     }
 }
 

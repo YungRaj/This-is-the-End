@@ -13,5 +13,4 @@ extern NSString *kStoreVCDismissKey;
 @interface StoreViewController : UIViewController
 
 
-
 @end

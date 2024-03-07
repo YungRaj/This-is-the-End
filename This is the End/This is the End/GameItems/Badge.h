@@ -12,8 +12,7 @@
 
 #define numberOfBadges 15
 
-typedef enum
-{
+typedef enum {
     AttackBadge,
     AUpDDownBadge,
     DUpADownBadge,
@@ -31,27 +30,15 @@ typedef enum
     GodBadge,
 } BadgeType;
 
-static NSString *badges[] = {@"Attack",
-                             @"AUpDDown",
-                             @"DUpADown",
-                             @"CloseCall",
-                             @"DodgeAttack",
-                             @"LastStand",
-                             @"Health",
-                             @"RestoreHealth",
-                             @"Coin",
-                             @"PlusPUpTime",
-                             @"DownEnemyA",
-                             @"Run",
-                             @"Jump",
-                             @"JumpAttack",
-                             @"God"};
+static NSString *badges[] = {@"Attack",     @"AUpDDown", @"DUpADown",      @"CloseCall",  @"DodgeAttack",
+                             @"LastStand",  @"Health",   @"RestoreHealth", @"Coin",       @"PlusPUpTime",
+                             @"DownEnemyA", @"Run",      @"Jump",          @"JumpAttack", @"God"};
 
 @interface Badge : SKSpriteNode <CollectableItem>
 
-@property (assign,nonatomic) BadgeType type;
+@property (assign, nonatomic) BadgeType type;
 
--(instancetype)initWithType:(BadgeType)type;
--(void)activate;
+- (instancetype)initWithType:(BadgeType)type;
+- (void)activate;
 
 @end

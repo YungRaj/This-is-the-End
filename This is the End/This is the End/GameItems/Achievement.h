@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <GameKit/GameKit.h>
 
-typedef enum
-{
+typedef enum {
     GameAchievementOneHundredCoins,
     GameAchievementOneThousandCoins,
     GameAchievementTenThousandCoins,
@@ -30,11 +29,10 @@ typedef enum
 
 @interface Achievement : GKAchievement
 
-@property (assign,nonatomic) GameAchievement achievement;
+@property (assign, nonatomic) GameAchievement achievement;
 
 
-+(instancetype)achievementWithIdentifier:(NSString*)identifier;
-
++ (instancetype)achievementWithIdentifier:(NSString *)identifier;
 
 
 @end

@@ -12,9 +12,9 @@
 
 @interface LoadingGameScreenVC : UIViewController
 
-@property (strong,nonatomic) GameData *state;
+@property (strong, nonatomic) GameData *state;
 
--(void)setUpLoadingGameScreen;
--(void)cleanUpLoadingGameScreen;
+- (void)setUpLoadingGameScreen;
+- (void)cleanUpLoadingGameScreen;
 
 @end

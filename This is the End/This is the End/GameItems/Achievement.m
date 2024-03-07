@@ -10,66 +10,51 @@
 
 @implementation Achievement
 
--(instancetype)initWithIdentifier:(NSString *)identifier
+- (instancetype)initWithIdentifier:(NSString *)identifier
 {
     self = [super initWithIdentifier:identifier];
-    
-    if(self)
-    {
+
+    if (self) {
         [self setUpAchievementWithIdentifier:identifier];
     }
-    
+
     return self;
 }
 
--(void)setUpAchievementWithIdentifier:(NSString*)identifier
+- (void)setUpAchievementWithIdentifier:(NSString *)identifier
 {
-    if([identifier isEqualToString:@"OneHundredCoins"])
-    {
+    if ([identifier isEqualToString:@"OneHundredCoins"]) {
         _achievement = GameAchievementOneHundredCoins;
-    } else if([identifier isEqualToString:@"OneThousandCoins"])
-    {
+    } else if ([identifier isEqualToString:@"OneThousandCoins"]) {
         _achievement = GameAchievementOneThousandCoins;
-    } else if([identifier isEqualToString:@"TenThousandCoins"])
-    {
+    } else if ([identifier isEqualToString:@"TenThousandCoins"]) {
         _achievement = GameAchievementTenThousandCoins;
-    } else if([identifier isEqualToString:@"FiftyKills"])
-    {
+    } else if ([identifier isEqualToString:@"FiftyKills"]) {
         _achievement = GameAchievementFiftyKills;
-    } else if([identifier isEqualToString:@"TwoHundredFiftyKills"])
-    {
+    } else if ([identifier isEqualToString:@"TwoHundredFiftyKills"]) {
         _achievement = GameAchievementTwoHundredFiftyKills;
-    } else if([identifier isEqualToString:@"OneThousandKills"])
-    {
+    } else if ([identifier isEqualToString:@"OneThousandKills"]) {
         _achievement = GameAchievementOneThousandKills;
-    } else if([identifier isEqualToString:@"TenThousandKills"])
-    {
+    } else if ([identifier isEqualToString:@"TenThousandKills"]) {
         _achievement = GameAchievementTenThousandKills;
-    } else if([identifier isEqualToString:@"OneThousandShotsFired"])
-    {
+    } else if ([identifier isEqualToString:@"OneThousandShotsFired"]) {
         _achievement = GameAchievementOneThousandShotsFired;
-    } else if([identifier isEqualToString:@"TenThousandShotsFired"])
-    {
+    } else if ([identifier isEqualToString:@"TenThousandShotsFired"]) {
         _achievement = GameAchievementTenThousandShotsFired;
-    } else if([identifier isEqualToString:@"OneHundredThousandShotsFired"])
-    {
+    } else if ([identifier isEqualToString:@"OneHundredThousandShotsFired"]) {
         _achievement = GameAchievementOneHundredThousandShotsFired;
-    } else if([identifier isEqualToString:@"OneMillionShotsFired"])
-    {
+    } else if ([identifier isEqualToString:@"OneMillionShotsFired"]) {
         _achievement = GameAchievementOneMillionShotsFired;
-    } else if([identifier isEqualToString:@"TenBadgesUsed"])
-    {
+    } else if ([identifier isEqualToString:@"TenBadgesUsed"]) {
         _achievement = GameAchievementTenBadgesUsed;
-    } else if([identifier isEqualToString:@"TwentyFiveBadgesUsed"])
-    {
+    } else if ([identifier isEqualToString:@"TwentyFiveBadgesUsed"]) {
         _achievement = GameAchievementTwentyFiveBadgesUsed;
-    } else if([identifier isEqualToString:@"OneHundredBadgesUsed"])
-    {
+    } else if ([identifier isEqualToString:@"OneHundredBadgesUsed"]) {
         _achievement = GameAchievementOneHundredBadgesUsed;
     }
 }
 
-+(instancetype)achievementWithIdentifier:(NSString *)identifier
++ (instancetype)achievementWithIdentifier:(NSString *)identifier
 {
     return [[self alloc] initWithIdentifier:identifier];
 }

@@ -14,17 +14,16 @@
  Defense increase
  Jump
  Run
- 
+
  */
 
 #import <SpriteKit/SpriteKit.h>
-#import "MovingObject.h"
 #import "CollectableItem.h"
+#import "MovingObject.h"
 
 #define numberOfPowerUps 5
 
-typedef enum
-{
+typedef enum {
     Health,
     Attack,
     Defense,
@@ -32,17 +31,13 @@ typedef enum
     Run,
 } PowerUpType;
 
-static NSString *powerUps[] = {@"Health",
-                               @"Attack",
-                               @"Defense",
-                               @"Jump",
-                               @"Run"};
+static NSString *powerUps[] = {@"Health", @"Attack", @"Defense", @"Jump", @"Run"};
 
 @interface PowerUp : SKSpriteNode <CollectableItem>
 
-@property (assign,nonatomic) PowerUpType type;
+@property (assign, nonatomic) PowerUpType type;
 
--(instancetype)initWithType:(PowerUpType)type;
--(void)activate;
+- (instancetype)initWithType:(PowerUpType)type;
+- (void)activate;
 
 @end

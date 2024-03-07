@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum
-{
+typedef enum {
     InterruptedGamePaused,
     InterruptedGameOver,
     InterruptedGameRetrievedItem,
@@ -19,6 +18,6 @@ typedef enum
 
 @interface InterruptGameMenuVC : UIViewController
 
--(instancetype)initWithType:(InterruptedGameMode)mode;
+- (instancetype)initWithType:(InterruptedGameMode)mode;
 
 @end

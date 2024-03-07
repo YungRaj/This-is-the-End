@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Ilhan-Parker. All rights reserved.
 //
 
+#import <CoreGraphics/CoreGraphics.h>
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
-#import <CoreGraphics/CoreGraphics.h>
 
 #define FRAME_RATE 60.0
 
@@ -68,9 +68,8 @@ extern NSString *kMainMenuResumeFrame;
 BOOL checkAllCollisions(SKNode *node);
 BOOL checkCollision(SKNode *a, SKNode *b);
 
-SKSpriteNode<CollectableItem>* randomItem();
-PowerUp* randomPowerUp();
-Badge* randomBadge();
-Coin* newCoin();
+SKSpriteNode<CollectableItem> *randomItem();
+PowerUp *randomPowerUp();
+Badge *randomBadge();
+Coin *newCoin();
 NSInteger xScaleNegativeDirectionFromIOSVersion();
-

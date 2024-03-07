@@ -10,7 +10,7 @@
 
 @interface PlayerSettings : NSObject <NSCoding>
 
--(void)savePlayerSettings;
--(void)removePlayerSettings;
+- (void)savePlayerSettings;
+- (void)removePlayerSettings;
 
 @end

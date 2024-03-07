@@ -9,19 +9,13 @@
 #import <SpriteKit/SpriteKit.h>
 #import "CollectableItem.h"
 
-static NSString *coinStoreItems[] = {@"CoinOneHundred",
-                                     @"CoinOneThousand",
-                                     @"CoinTenThousand",
-                                     @"CoinInfinity"};
+static NSString *coinStoreItems[] = {@"CoinOneHundred", @"CoinOneThousand", @"CoinTenThousand", @"CoinInfinity"};
 
-static uint32_t coinStoreQuantity[] = {100,
-                                       1000,
-                                       10000,
-                                       UINT32_MAX};
+static uint32_t coinStoreQuantity[] = {100, 1000, 10000, UINT32_MAX};
 
 @interface Coin : SKSpriteNode <CollectableItem>
 
 
--(void)activate;
+- (void)activate;
 
 @end

@@ -12,7 +12,7 @@
 
 @interface TITEViewController : UIViewController
 
-@property (assign,nonatomic) BOOL gameCenterEnabled;
-@property (strong,nonatomic) GameData *gameDataSelected;
+@property (assign, nonatomic) BOOL gameCenterEnabled;
+@property (strong, nonatomic) GameData *gameDataSelected;
 
 @end

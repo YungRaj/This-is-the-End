@@ -6,17 +6,16 @@
 //  Copyright (c) 2015 Ilhan-Parker. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <GameKit/GameKit.h>
+#import <UIKit/UIKit.h>
 
 
 @interface MainMenuViewController : UIViewController
 
-@property (strong,nonatomic) UIImageView *view;
+@property (strong, nonatomic) UIImageView *view;
 
--(void)cleanUpMainMenuItems;
--(void)setUpView;
--(void)authenticateLocalPlayer;
+- (void)cleanUpMainMenuItems;
+- (void)setUpView;
+- (void)authenticateLocalPlayer;
 
 @end
-

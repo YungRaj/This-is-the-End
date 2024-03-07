@@ -11,15 +11,15 @@
 
 @interface SKNumberNode : SKSpriteNode
 
-@property (assign,nonatomic) NSInteger number;
+@property (assign, nonatomic) NSInteger number;
 
 
--(instancetype)initWithNumber:(NSInteger)number
-                         size:(CGSize)size
-                     position:(CGPoint)position
-                  sizeOfDigit:(CGSize)size
-               numberOfDigits:(NSInteger)digits
-shouldFillEmptyDigitsWithZeros:(BOOL)shouldFillEmptyDigitsWithZeros;
+- (instancetype)initWithNumber:(NSInteger)number
+                              size:(CGSize)size
+                          position:(CGPoint)position
+                       sizeOfDigit:(CGSize)size
+                    numberOfDigits:(NSInteger)digits
+    shouldFillEmptyDigitsWithZeros:(BOOL)shouldFillEmptyDigitsWithZeros;
 
 
 @end

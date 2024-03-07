@@ -10,6 +10,6 @@
 
 @interface GameLevel : SKSpriteNode
 
-@property (strong,nonatomic) NSDictionary *level;
+@property (strong, nonatomic) NSDictionary *level;
 
 @end

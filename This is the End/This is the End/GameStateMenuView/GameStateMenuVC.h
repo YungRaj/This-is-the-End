@@ -11,7 +11,6 @@
 
 @interface GameStateMenuVC : UIViewController
 
--(void)cleanUpViews;
+- (void)cleanUpViews;
 
 @end
-

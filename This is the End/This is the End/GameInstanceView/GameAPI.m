@@ -7,10 +7,10 @@
 //
 
 #import "GameAPI.h"
-#import "GameScene.h"
-#import "PowerUp.h"
 #import "Badge.h"
 #import "Coin.h"
+#import "GameScene.h"
+#import "PowerUp.h"
 
 const NSString *kPowerUpGod = @"God";
 const NSString *kPowerUpCoin = @"Coin";
@@ -54,14 +54,11 @@ const NSString *kMainMenuResumeFrame = @"mainMenuResumeFrame";
 
 BOOL checkAllCollisions(SKNode *node)
 {
-    if([node.scene isKindOfClass:[GameScene class]])
-    {
-        GameScene *scene = (GameScene*)node.scene;
-        for(SKNode *rectangle in scene.rectangles)
-        {
-            BOOL isColliding = checkCollision(node,rectangle);
-            if(isColliding)
-            {
+    if ([node.scene isKindOfClass:[GameScene class]]) {
+        GameScene *scene = (GameScene *)node.scene;
+        for (SKNode *rectangle in scene.rectangles) {
+            BOOL isColliding = checkCollision(node, rectangle);
+            if (isColliding) {
                 return true;
             }
         }
@@ -71,17 +68,17 @@ BOOL checkAllCollisions(SKNode *node)
 
 BOOL checkCollision(SKNode *a, SKNode *b)
 {
-    CGFloat aTopLeftX = a.position.x-a.frame.size.width*.15;
-    CGFloat aTopLeftY = a.position.y+a.frame.size.height/2;
-    CGFloat aBottomRightX = a.position.x+a.frame.size.width*.15;
-    CGFloat aBottomRightY = a.position.y-a.frame.size.height/2;
-    CGFloat bTopLeftX = b.position.x-b.frame.size.width/2;
-    CGFloat bTopLeftY = b.position.y+b.frame.size.height/2;
-    CGFloat bBottomRightX = b.position.x+b.frame.size.width/2;
-    CGFloat bBottomRightY = b.position.y-b.frame.size.height/2;
-    
-    return !(bTopLeftX>=aBottomRightX || aTopLeftX>=bBottomRightX ||
-             aBottomRightY>=bTopLeftY || bBottomRightY>=aTopLeftY);
+    CGFloat aTopLeftX = a.position.x - a.frame.size.width * .15;
+    CGFloat aTopLeftY = a.position.y + a.frame.size.height / 2;
+    CGFloat aBottomRightX = a.position.x + a.frame.size.width * .15;
+    CGFloat aBottomRightY = a.position.y - a.frame.size.height / 2;
+    CGFloat bTopLeftX = b.position.x - b.frame.size.width / 2;
+    CGFloat bTopLeftY = b.position.y + b.frame.size.height / 2;
+    CGFloat bBottomRightX = b.position.x + b.frame.size.width / 2;
+    CGFloat bBottomRightY = b.position.y - b.frame.size.height / 2;
+
+    return !(bTopLeftX >= aBottomRightX || aTopLeftX >= bBottomRightX || aBottomRightY >= bTopLeftY ||
+             bBottomRightY >= aTopLeftY);
 }
 
 // doesn't work....
@@ -99,42 +96,38 @@ BOOL checkCollision(SKNode *a, SKNode *b)
              aBottomRightY>=bTopLeftY || bBottomRightY>=aTopLeftY);
 }*/
 
-// not needed anymore 
+// not needed anymore
 
 NSInteger xScaleNegativeDirectionFromIOSVersion()
 {
     return -1;
 }
 
-SKSpriteNode<CollectableItem>* randomItem()
+SKSpriteNode<CollectableItem> *randomItem()
 {
-    NSInteger random = arc4random()%((numberOfBadges+numberOfPowerUps)*2);
-    
-    if(random==10)
-    {
+    NSInteger random = arc4random() % ((numberOfBadges + numberOfPowerUps) * 2);
+
+    if (random == 10) {
         return randomBadge();
-    } else if(random%2==0)
-    {
+    } else if (random % 2 == 0) {
         return randomPowerUp();
-    } else
-    {
+    } else {
         return newCoin();
     }
     return nil;
 }
 
-PowerUp* randomPowerUp()
+PowerUp *randomPowerUp()
 {
-    return [[PowerUp alloc] initWithType:arc4random()%numberOfPowerUps];
+    return [[PowerUp alloc] initWithType:arc4random() % numberOfPowerUps];
 }
 
-Badge* randomBadge()
+Badge *randomBadge()
 {
-    return [[Badge alloc] initWithType:arc4random()%numberOfBadges];
+    return [[Badge alloc] initWithType:arc4random() % numberOfBadges];
 }
 
-Coin* newCoin()
+Coin *newCoin()
 {
     return [[Coin alloc] init];
 }
-

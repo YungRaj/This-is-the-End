@@ -11,10 +11,10 @@
 
 @interface Bullet : SKSpriteNode
 
-@property (weak,nonatomic) id<BulletDelegate> delegate;
+@property (weak, nonatomic) id<BulletDelegate> delegate;
 
--(instancetype)initWithName:(NSString*)name size:(CGSize)size;
--(void)shootAtPoint:(CGPoint)point;
--(void)explode;
+- (instancetype)initWithName:(NSString *)name size:(CGSize)size;
+- (void)shootAtPoint:(CGPoint)point;
+- (void)explode;
 
 @end

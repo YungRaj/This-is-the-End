@@ -12,8 +12,8 @@
 
 @protocol BulletDelegate <NSObject>
 
-@property (strong,nonatomic) NSMutableArray *bullets;
+@property (strong, nonatomic) NSMutableArray *bullets;
 
--(void)removeBullet:(Bullet*)bullet;
+- (void)removeBullet:(Bullet *)bullet;
 
 @end

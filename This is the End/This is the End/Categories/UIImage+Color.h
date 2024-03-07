@@ -10,6 +10,6 @@
 
 @interface UIImage (Color)
 
-+(UIImage *)imageNamed:(NSString *)name withColor:(UIColor *)color;
++ (UIImage *)imageNamed:(NSString *)name withColor:(UIColor *)color;
 
 @end

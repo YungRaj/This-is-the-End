@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-typedef enum{
+typedef enum {
     BlockTypeMystery,
     BlockTypeWood,
     BlockTypeMetal,
@@ -20,9 +20,9 @@ extern const NSString *kBlockActionActivate;
 
 @interface Block : SKSpriteNode
 
-@property (assign,nonatomic) BlockType type;
-@property (assign,nonatomic) BOOL isActivated;
+@property (assign, nonatomic) BlockType type;
+@property (assign, nonatomic) BOOL isActivated;
 
--(void)activateBlock;
+- (void)activateBlock;
 
 @end

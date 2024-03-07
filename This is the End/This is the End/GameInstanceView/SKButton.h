@@ -13,12 +13,12 @@
 @interface SKButton : SKSpriteNode
 
 
-@property (strong,nonatomic) SKSpriteNode *contents;
-@property (assign,nonatomic) BOOL isSelected;
+@property (strong, nonatomic) SKSpriteNode *contents;
+@property (assign, nonatomic) BOOL isSelected;
 
-+(instancetype)buttonWithTexture:(SKTexture*)texture
-                        withSize:(CGSize)size
-                    childTexture:(SKTexture*)childTexture
-                        withSize:(CGSize)childSize;
++ (instancetype)buttonWithTexture:(SKTexture *)texture
+                         withSize:(CGSize)size
+                     childTexture:(SKTexture *)childTexture
+                         withSize:(CGSize)childSize;
 
 @end

@@ -10,7 +10,6 @@
 #import "GameScene.h"
 
 @interface SKButton () {
-    
 }
 
 @end
@@ -18,79 +17,71 @@
 @implementation SKButton
 
 
-
-+(instancetype)buttonWithTexture:(SKTexture*)texture
-                        withSize:(CGSize)size
-                    childTexture:(SKTexture*)childTexture
-                        withSize:(CGSize)childSize
++ (instancetype)buttonWithTexture:(SKTexture *)texture
+                         withSize:(CGSize)size
+                     childTexture:(SKTexture *)childTexture
+                         withSize:(CGSize)childSize
 {
     SKButton *button = [self spriteNodeWithTexture:texture];
-    
+
     button.size = size;
-    
+
     button.contents = [SKSpriteNode spriteNodeWithTexture:childTexture];
     button.contents.size = childSize;
-    
+
     button.userInteractionEnabled = YES;
-    
+
     return button;
 }
 
--(void)setIsSelected:(BOOL)isSelected
+- (void)setIsSelected:(BOOL)isSelected
 {
     _isSelected = isSelected;
-    
-    if(isSelected)
-    {
+
+    if (isSelected) {
         self.colorBlendFactor = 0.5;
-    } else
-    {
+    } else {
         self.colorBlendFactor = 0.0;
     }
 }
 
--(void)setContents:(SKSpriteNode *)contents
+- (void)setContents:(SKSpriteNode *)contents
 {
     _contents = contents;
-    
+
     [self addChild:contents];
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    for(UITouch *touch in touches)
-    {
+    for (UITouch *touch in touches) {
         CGPoint point = [touch locationInNode:self.parent];
-        
-        if(CGRectContainsPoint(self.frame,point))
-        {
+
+        if (CGRectContainsPoint(self.frame, point)) {
             self.isSelected = YES;
         }
     }
-    
+
     [self.parent touchesBegan:touches withEvent:event];
     [super touchesBegan:touches withEvent:event];
 }
 
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    for(UITouch *touch in touches)
-    {
+    for (UITouch *touch in touches) {
         CGPoint point = [touch locationInNode:self.parent];
-        
-        if(CGRectContainsPoint(self.frame,point))
-        {
+
+        if (CGRectContainsPoint(self.frame, point)) {
             self.isSelected = NO;
         }
     }
-    
+
     [self.parent touchesEnded:touches withEvent:event];
     [super touchesEnded:touches withEvent:event];
 }
 
--(void)dealloc
+- (void)dealloc
 {
-
 }
 
 @end

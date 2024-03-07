@@ -7,14 +7,12 @@
 //
 
 
-
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
-#import "MovingObject.h"
 #import "BulletDelegate.h"
+#import "MovingObject.h"
 
-typedef enum
-{
+typedef enum {
     PlayerStateStanding,
     PlayerStateIdle,
     PlayerStateWalking,
@@ -41,14 +39,14 @@ extern NSString *kPlayerActionDeath;
 @interface Player : SKSpriteNode <MovingObject, BulletDelegate, NSCoding>
 
 
-@property (weak,nonatomic) GameData *state;
-@property (assign,nonatomic) PlayerState currentState;
-@property (assign,nonatomic) int64_t highScore;
-@property (strong,nonatomic) NSMutableArray *bullets;
-@property (assign,nonatomic) BOOL isStanding;
-@property (assign,nonatomic) BOOL shouldExitMoveAndAttack;
+@property (weak, nonatomic) GameData *state;
+@property (assign, nonatomic) PlayerState currentState;
+@property (assign, nonatomic) int64_t highScore;
+@property (strong, nonatomic) NSMutableArray *bullets;
+@property (assign, nonatomic) BOOL isStanding;
+@property (assign, nonatomic) BOOL shouldExitMoveAndAttack;
 
-+(instancetype)loadPlayerInstance;
--(void)addAchievement:(Achievement*)achievment;
++ (instancetype)loadPlayerInstance;
+- (void)addAchievement:(Achievement *)achievment;
 
 @end

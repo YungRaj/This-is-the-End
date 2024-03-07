@@ -11,13 +11,13 @@
 @protocol MovingObject <NSObject>
 
 
--(void)action;
+- (void)action;
 
 @optional
--(void)move;
--(void)attack;
--(void)moveAndAttack;
--(void)jump;
--(void)death;
+- (void)move;
+- (void)attack;
+- (void)moveAndAttack;
+- (void)jump;
+- (void)death;
 
 @end

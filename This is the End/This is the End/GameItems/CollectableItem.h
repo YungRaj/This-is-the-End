@@ -10,6 +10,6 @@
 
 @protocol CollectableItem <NSObject>
 
--(void)activate;
+- (void)activate;
 
 @end

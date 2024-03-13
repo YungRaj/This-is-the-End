@@ -35,6 +35,7 @@ extern NSString *kPlayerActionDeath;
 @class Achievement;
 @class PowerUp;
 @class Badge;
+@class GameData;
 
 @interface Player : SKSpriteNode <MovingObject, BulletDelegate, NSCoding>
 
